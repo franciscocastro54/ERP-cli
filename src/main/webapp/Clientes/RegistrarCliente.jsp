@@ -2,12 +2,12 @@
 <form class="container-fluid">
     <div class="row justify-content-center">
         
-        
-    <h2 class="col-6 text-center">Registrar Cliente</h2>
+        <div class="col-6">
+    <h2 class="text-center">Registrar Cliente</h2>
         </div>
-   
-<div class="row justify-content-center  align-items-center">   
-    <div class="col-2 ">
+    </div>
+<div class="row justify-content-center">   
+    <div class="col-2 align-self-center">
             <label class="">Rut:</label>
     </div>
     <div class="col-6">

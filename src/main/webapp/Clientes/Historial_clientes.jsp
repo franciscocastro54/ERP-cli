@@ -1,3 +1,5 @@
+<html>
+<body>
 <main class="container-fluid">
 <div class="row justify-content-center  align-items-center">
     <h2 class="col-6 text-center">Historial Cliente</h2>
@@ -64,4 +66,4 @@
     </div>
 </main>
     
- 
+</body></html>

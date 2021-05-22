@@ -8,31 +8,42 @@
     </head>
    <body>
         <div class="container-fluid">
-           <div class="row justify-content-center">
+           <div class="row justify-content-center" style="padding-bottom: 3em">
                <img src="imagenes/Logo_inacap.png" class="col-3">
            </div>
-            <div class="row justify-content-center">
-                <div class="col-6 container-lg">
-                <div class="row py-2 justify-content-center">
+            <div class="row justify-content-center align-items-center py-3">
+                
+                <div class="col-6 container-lg border bg-light">
+                  
+                    <div class="row  py-3 justify-content-center" style="">
                     <h2 class="col-3 text-center fw-normal">login</h2>
                 </div>
-                <div class="row py-2">
-                    <p class="col-4 fw-bold text-rigth">Usuario:</p>
-                    <div class="col-8">
+                     
+                <div class="row py-3 justify-content-center align-items-center">
+                    <p class="col-3 fw-bold text-rigth">Usuario:</p>
+                    <div class="col-6">
                     <input class="form-control " type="text" placeholder="Usuario">
                     </div>
-                </div>
-                    <div class="row py-2 ">
-                        <label class="col-4 fw-bold">Contraseña:</label>
-                        <div class="col-8">
+                   
+                </div> 
+                    <div class="row py-3  justify-content-center align-items-center">
+                        <label class="col-3 fw-bold">Contraseña:</label>
+                        <div class="col-6">
                         <input class=" form-control" type="password" placeholder="Contraseña">
                         </div>
                         </div>
-                    <div class="row justify-content-center">
-                        <input class="col-6 btn btn-primary" type="submit">
+                    <div class="row justify-content-center" style="padding-top: 3em">
+                        <input class="col-4 btn btn-primary" type="submit">
                     </div>
+                
                 </div>
+               
         </div>
-    
+    <div class=" row  justify-content-center  align-items-center " style="padding-top: 12em">
+              <label class="col text-center">ERP seccion 230</label>
+               <label class="col text-center">Bravo de saravia 2980</label>
+                <label class="col text-center"> Rep_230@inacapmail.cl</label>
+          
+          </div>
 
 </div></body></html>

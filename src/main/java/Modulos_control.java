@@ -34,7 +34,8 @@ public class Modulos_control extends HttpServlet {
    response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
            String modulo= request.getParameter("m").toString();
-           String opcion = request.getParameter("op").toString();
+           String opcion="";
+           if(request.getParameter("op")!=null)opcion = request.getParameter("op").toString();
             /* TODO output your page here. You may use following sample code. */
             
             out.println("<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 3.2 Final//EN\">");
@@ -86,8 +87,6 @@ public class Modulos_control extends HttpServlet {
                     case "ord":
                     request.getRequestDispatcher("/Clientes/ordenServicio.jsp").include(request, response);
                     break;
-                   
-                    
                 default:
                    //aqui va pagina por defecto
                     break;

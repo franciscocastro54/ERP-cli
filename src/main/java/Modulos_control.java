@@ -36,7 +36,7 @@ public class Modulos_control extends HttpServlet {
 
             /* TODO output your page here. You may use following sample code. */
 
-   
+         String modulo= request.getParameter("m").toString();
            String opcion="";
            if(request.getParameter("op")!=null)opcion = request.getParameter("op").toString();
             /* TODO output your page here. You may use following sample code. */
@@ -102,7 +102,6 @@ public class Modulos_control extends HttpServlet {
                    //aqui va pagina por defecto
                     break;
             }
->>>>>>> d5e2d42386c67a4bd69b2ba4825561c9ced513f7
             out.println("</div>");
             out.println("</div>");
             out.println("</div>");

@@ -13,8 +13,8 @@
            </div>
             <div class="row justify-content-center align-items-center py-3">
                 
-                <div class="col-6 container-lg border bg-light">
-                  
+                <form class="col-6 container-lg border bg-light" action="Modulos.jsp" method="post">
+                   
                     <div class="row  py-3 justify-content-center" style="">
                     <h2 class="col-3 text-center fw-normal">login</h2>
                 </div>
@@ -22,21 +22,21 @@
                 <div class="row py-3 justify-content-center align-items-center">
                     <p class="col-3 fw-bold text-rigth">Usuario:</p>
                     <div class="col-6">
-                    <input class="form-control " type="text" placeholder="Usuario">
+                    <input class="form-control " type="text" placeholder="Usuario" name="user">
                     </div>
                    
                 </div> 
                     <div class="row py-3  justify-content-center align-items-center">
                         <label class="col-3 fw-bold">Contraseña:</label>
                         <div class="col-6">
-                        <input class=" form-control" type="password" placeholder="Contraseña">
+                        <input class=" form-control" type="password" placeholder="Contraseña" name="password">
                         </div>
                         </div>
                     <div class="row justify-content-center" style="padding-top: 3em">
                         <input class="col-4 btn btn-primary" type="submit">
                     </div>
                 
-                </div>
+                </form>
                
         </div>
     <div class=" row  justify-content-center  align-items-center " style="padding-top: 12em">

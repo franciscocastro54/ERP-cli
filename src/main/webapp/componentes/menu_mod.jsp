@@ -23,8 +23,8 @@
     </h2>
     <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
       <div class="accordion-body">
-          <a href="/ERP-cli/Modulos_control?m=cli&op="><strong>BUSCAR DEUDAS</strong></a>
-          <a href="/ERP-cli/Modulos_control?m=cli&op="><strong>BUSCAR DEUDORES</strong></a>
+          <a href="/ERP-cli/Modulos_control?m=cli&op=cobinf"><strong>BUSCAR DEUDAS</strong></a>
+          <a href="/ERP-cli/Modulos_control?m=cli&op=cobpag"><strong>BUSCAR DEUDORES</strong></a>
       
       </div>
     </div>
@@ -62,8 +62,7 @@
     </h2>
     <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
       <div class="accordion-body">
-          <a href="/ERP-cli/Modulos_control?m=cli&op="><strong>BUSCAR BENEFICIARIO</strong></a>
-       
+          <a href="/ERP-cli/Modulos_control?m=cli&op=def"><strong>BUSCAR BENEFICIARIO</strong></a>
       </div>
     </div>
   </div>

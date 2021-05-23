@@ -40,8 +40,6 @@ public class Modulos_control extends HttpServlet {
            String opcion="";
            if(request.getParameter("op")!=null)opcion = request.getParameter("op").toString();
             /* TODO output your page here. You may use following sample code. */
-            
-
             out.println("<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 3.2 Final//EN\">");
             out.println("<html>");
             out.println("<head>");
@@ -56,13 +54,7 @@ public class Modulos_control extends HttpServlet {
             out.println("</div>");
             out.println("<div class=\"row\">");
             out.println("<div class=\"col-2\">");
-
-            request.getRequestDispatcher("/componentes/menu_mod.jsp").include(request, response);
-            out.println("</div>");
-            out.println("<div class=\"col-10\">");
-            //aqui abajo va el contenido
-            request.getRequestDispatcher("/Clientes/Feedback.jsp").include(request, response);
-            switch(modulo){
+  switch(modulo){
             case "cli":
             request.getRequestDispatcher("/componentes/menu_mod.jsp").include(request, response);
             break;
@@ -72,6 +64,7 @@ public class Modulos_control extends HttpServlet {
                 out.println("<h2> ERROR DE MODULO</h2>");
            break;
             }
+       
                     out.println("</div>");
             out.println("<div class=\"col-10\">");
             //aqui abajo va el contenido  

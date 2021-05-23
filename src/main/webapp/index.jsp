@@ -13,7 +13,7 @@
            </div>
             <div class="row justify-content-center align-items-center py-3">
                 
-                <form class="col-6 container-lg border bg-light" action="Modulos.jsp" method="post">
+                <form class="col-6 container-lg border bg-light" action="/ERP-cli/Modulos" method="post">
                    
                     <div class="row  py-3 justify-content-center" style="">
                     <h2 class="col-3 text-center fw-normal">login</h2>
@@ -24,7 +24,6 @@
                     <div class="col-6">
                     <input class="form-control " type="text" placeholder="Usuario" name="user">
                     </div>
-                   
                 </div> 
                     <div class="row py-3  justify-content-center align-items-center">
                         <label class="col-3 fw-bold">Contraseña:</label>

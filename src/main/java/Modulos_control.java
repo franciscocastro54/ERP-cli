@@ -33,15 +33,15 @@ public class Modulos_control extends HttpServlet {
             throws ServletException, IOException {
    response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-<<<<<<< HEAD
+
             /* TODO output your page here. You may use following sample code. */
-=======
-           String modulo= request.getParameter("m").toString();
+
+   
            String opcion="";
            if(request.getParameter("op")!=null)opcion = request.getParameter("op").toString();
             /* TODO output your page here. You may use following sample code. */
             
->>>>>>> d5e2d42386c67a4bd69b2ba4825561c9ced513f7
+
             out.println("<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 3.2 Final//EN\">");
             out.println("<html>");
             out.println("<head>");
@@ -56,13 +56,13 @@ public class Modulos_control extends HttpServlet {
             out.println("</div>");
             out.println("<div class=\"row\">");
             out.println("<div class=\"col-2\">");
-<<<<<<< HEAD
+
             request.getRequestDispatcher("/componentes/menu_mod.jsp").include(request, response);
             out.println("</div>");
             out.println("<div class=\"col-10\">");
             //aqui abajo va el contenido
             request.getRequestDispatcher("/Clientes/Feedback.jsp").include(request, response);
-=======
+
             switch(modulo){
             case "cli":
             request.getRequestDispatcher("/componentes/menu_mod.jsp").include(request, response);

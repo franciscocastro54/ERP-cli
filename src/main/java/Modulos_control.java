@@ -31,10 +31,35 @@ public class Modulos_control extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
-         
-           RequestDispatcher  despachador = getServletContext().getRequestDispatcher("/index.jsp");
-        despachador.forward(request, response);
+   response.setContentType("text/html;charset=UTF-8");
+        try (PrintWriter out = response.getWriter()) {
+            /* TODO output your page here. You may use following sample code. */
+            out.println("<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 3.2 Final//EN\">");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">");
+            request.getRequestDispatcher("/css/cssdefault.jsp").include(request, response);
+            out.println("<title>Servlet NewServlet</title>");            
+            out.println("</head>");
+            out.println("<body>");
+            out.println("<div class=\"container-fluid\">");
+            out.println("<div class=\"row\">");
+            request.getRequestDispatcher("/componentes/healer.jsp").include(request, response);
+            out.println("</div>");
+            out.println("<div class=\"row\">");
+            out.println("<div class=\"col-2\">");
+            request.getRequestDispatcher("/componentes/menu_mod.jsp").include(request, response);
+            out.println("</div>");
+            out.println("<div class=\"col-10\">");
+            //aqui abajo va el contenido
+            request.getRequestDispatcher("/Clientes/Feedback.jsp").include(request, response);
+            out.println("</div>");
+            out.println("</div>");
+            out.println("</div>");
+            out.println("</body>");
+            out.println("</html>");
+        
+        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

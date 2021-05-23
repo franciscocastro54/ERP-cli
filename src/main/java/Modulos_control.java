@@ -90,6 +90,12 @@ public class Modulos_control extends HttpServlet {
                     case "ord":
                     request.getRequestDispatcher("/Clientes/ordenServicio.jsp").include(request, response);
                     break;
+                    case "def":
+                    request.getRequestDispatcher("/Clientes/ordenServicio.jsp").include(request, response);
+                    break;
+                    case "tab":
+                    request.getRequestDispatcher("/Clientes/ordenServicio.jsp").include(request, response);
+                    break;
                 default:
                    //aqui va pagina por defecto
                     break;

@@ -91,10 +91,16 @@ public class Modulos_control extends HttpServlet {
                     request.getRequestDispatcher("/Clientes/ordenServicio.jsp").include(request, response);
                     break;
                     case "def":
-                    request.getRequestDispatcher("/Clientes/ordenServicio.jsp").include(request, response);
+                    request.getRequestDispatcher("/Clientes/DefinicionCriterios.jsp").include(request, response);
                     break;
                     case "tab":
-                    request.getRequestDispatcher("/Clientes/ordenServicio.jsp").include(request, response);
+                    request.getRequestDispatcher("/Clientes/TablaFidelizacion.jsp").include(request, response);
+                    break;
+                    case "cobinf":
+                    request.getRequestDispatcher("/Clientes/Cobranza-informacion-del-cliente.jsp").include(request, response);
+                    break;
+                    case "cobpag":
+                    request.getRequestDispatcher("/Clientes/cobranza-pagospendientes.jsp").include(request, response);
                     break;
                 default:
                    //aqui va pagina por defecto

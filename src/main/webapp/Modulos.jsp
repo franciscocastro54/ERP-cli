@@ -28,33 +28,29 @@
                  <h4 class="col-12 text-center">Modulos</h4>
             </div>
          <div class=" row  justify-content-center  align-items-center " style="padding-top: 10em">
-             <div class="col-2 text-center">
-             <a class=""><img src="imagenes/elrL4LTy.png" width="64px" height="64px">
-                 <p>Clientes</p>
-             </a>
-             </div>
+       
          <div class="col-2 text-center">
-             <a class=""><img src="imagenes/elrL4LTy.png" width="64px" height="64px">
+             <a class="" href="/ERP-cli/Modulos_control"><img src="imagenes/elrL4LTy.png" width="64px" height="64px">
                  <p>Clientes</p>
              </a>
              </div>
              <div class="col-2 text-center">
-             <a class=""><img src="imagenes/elrL4LTy.png" width="64px" height="64px">
+             <a class="" href="/ERP-cli/Modulos_control"><img src="imagenes/elrL4LTy.png" width="64px" height="64px">
                  <p>Ventas</p>
              </a>
              </div>
              <div class="col-2 text-center">
-             <a class=""><img src="imagenes/elrL4LTy.png" width="64px" height="64px">
+             <a class="" href="/ERP-cli/Modulos_control"><img src="imagenes/elrL4LTy.png" width="64px" height="64px">
                  <p>Compras</p>
              </a>
              </div>
              <div class="col-2 text-center">
-             <a class=""><img src="imagenes/elrL4LTy.png" width="64px" height="64px">
+             <a class="" href="/ERP-cli/Modulos_control"><img src="imagenes/elrL4LTy.png" width="64px" height="64px">
                  <p>Inventario</p>
              </a>
              </div>
          <div class="col-2 text-center">
-             <a class=""><img src="imagenes/elrL4LTy.png" width="64px" height="64px">
+             <a class="" href="/ERP-cli/Modulos_control"><img src="imagenes/elrL4LTy.png" width="64px" height="64px">
                  <p>Finanzas</p>
              </a>
              </div>

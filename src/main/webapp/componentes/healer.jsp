@@ -1,8 +1,7 @@
 <healer>
     <div class="row">
 
-              <img src="/imagenes/INACAP-128x128.png" class="col-1 " >
-              <img src="/imagenes/elrL4LTy.png" class="col-1"  >
+        
               <img src="imagenes/Logo_inacap.png" class="col-1 " >
               <img src="imagenes/elrL4LTy.png" class="col-1"  >
           <div class="col-10">

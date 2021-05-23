@@ -62,7 +62,6 @@ public class Modulos_control extends HttpServlet {
             out.println("<div class=\"col-10\">");
             //aqui abajo va el contenido
             request.getRequestDispatcher("/Clientes/Feedback.jsp").include(request, response);
-
             switch(modulo){
             case "cli":
             request.getRequestDispatcher("/componentes/menu_mod.jsp").include(request, response);

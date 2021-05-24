@@ -75,7 +75,7 @@
     <div id="collapseSix" class="accordion-collapse collapse " aria-labelledby="headingSix" data-bs-parent="#accordionExample">
       <div class="accordion-body">
           <a href="/ERP-cli/Modulos_control?m=cli&op=feed"><strong>BUSCAR CLIENTES</strong></a>
-          <a href="/ERP-cli/Modulos_control?m=cli&op="><strong>ACCESO GOOGLE FROMS</strong></a>
+          <a href="https://docs.google.com/forms/u/0/"><strong>ACCESO GOOGLE FROMS</strong></a>
       </div>
     </div>
   </div>

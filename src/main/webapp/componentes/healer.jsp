@@ -2,8 +2,8 @@
     <div class="row">
 
         
-              <img src="imagenes/Logo_inacap.png" class="col-1 " >
-              <img src="imagenes/elrL4LTy.png" class="col-1"  >
+              <img src="imagenes/log-large.jpeg" class="col-2 " >
+             
           <div class="col-10">
    <div class="btn-group" role="group" aria-label="Basic example">
   <button type="button" class="btn btn-primary">Home</button>

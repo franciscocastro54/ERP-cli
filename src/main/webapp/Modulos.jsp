@@ -15,7 +15,7 @@
     <body >
         <div class="container-fluid">
          <div class="py-2 row  " >
-             <img src="imagenes/Logo_inacap.png" class="col-2" style="">
+             <img src="imagenes/log-large.jpeg" class="col-2" style="">
              <div class="col-1">
                  </div>
              <h2  class="col-6 text-center">INTRANET ERP 230</h2>
@@ -30,27 +30,27 @@
          <div class=" row  justify-content-center  align-items-center " style="padding-top: 10em">
        
          <div class="col-2 text-center">
-             <a class="" href="/ERP-cli/Modulos_control?m=cli"><img src="imagenes/elrL4LTy.png" width="64px" height="64px">
+             <a class="" href="/ERP-cli/Modulos_control?m=cli"><img src="imagenes/log-small.jpeg" width="64px" height="64px">
                  <p>Clientes</p>
              </a>
              </div>
              <div class="col-2 text-center">
-             <a class="" href="/ERP-cli/Modulos_control?m=ven"><img src="imagenes/elrL4LTy.png" width="64px" height="64px">
+             <a class="" href="/ERP-cli/Modulos_control?m=ven"><img src="imagenes/log-small.jpeg" width="64px" height="64px">
                  <p>Ventas</p>
              </a>
              </div>
              <div class="col-2 text-center">
-             <a class="" href="/ERP-cli/Modulos_control?m=com"><img src="imagenes/elrL4LTy.png" width="64px" height="64px">
+             <a class="" href="/ERP-cli/Modulos_control?m=com"><img src="imagenes/log-small.jpeg" width="64px" height="64px">
                  <p>Compras</p>
              </a>
              </div>
              <div class="col-2 text-center">
-             <a class="" href="/ERP-cli/Modulos_control?m=inv"><img src="imagenes/elrL4LTy.png" width="64px" height="64px">
+             <a class="" href="/ERP-cli/Modulos_control?m=inv"><img src="imagenes/log-small.jpeg" width="64px" height="64px">
                  <p>Inventario</p>
              </a>
              </div>
          <div class="col-2 text-center">
-             <a class="" href="/ERP-cli/Modulos_control?m=fin"><img src="imagenes/elrL4LTy.png" width="64px" height="64px">
+             <a class="" href="/ERP-cli/Modulos_control?m=fin"><img src="imagenes/log-small.jpeg" width="64px" height="64px">
                  <p>Finanzas</p>
              </a>
              </div>

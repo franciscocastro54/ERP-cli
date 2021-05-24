@@ -9,7 +9,7 @@
    <body>
         <div class="container-fluid">
            <div class="row justify-content-center" style="padding-bottom: 3em">
-               <img src="imagenes/Logo_inacap.png" class="col-3">
+               <img src="imagenes/log-large.jpeg" class="col-3">
            </div>
             <div class="row justify-content-center align-items-center py-3">
                 
@@ -38,7 +38,7 @@
                 </form>
                
         </div>
-    <div class=" row  justify-content-center  align-items-center " style="padding-top: 12em">
+    <div class=" row  justify-content-center  align-items-center " style="padding-top: 5em">
               <label class="col text-center">ERP seccion 230</label>
                <label class="col text-center">Bravo de saravia 2980</label>
                 <label class="col text-center"> Rep_230@inacapmail.cl</label>

@@ -27,6 +27,11 @@ public class Database {
     
     
         try {
+            try {
+                Class.forName("oracle.jdbc.driver.OracleDriver");
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, ex);
+            }
             connexion= DriverManager.getConnection("jdbc:oracle:thin:@bddsistemas_high?TNS_ADMIN=C:/Users/camil/Downloads/inacap/wallet_BDDSISTEMASINACAP/","ICAMILOFUENTES",".Inarenca2021.");
             
             return true;
@@ -38,15 +43,14 @@ public class Database {
         return false;
     } 
     
-    public boolean Validar_usuario(){
+    public boolean Validar_usuario(String user,String password){
      try {
          if(conectar()){
              Statement st = connexion.createStatement();
-             ResultSet rs = st.executeQuery("");
-              if(rs.next())
-            return true;
-                  
-        return true;
+             ResultSet rs = st.executeQuery("select * from usuario where rut='"+user+"' and password='"+password+"'");
+              if(rs.next()) return true;
+              else return false;
+
          
          
          }

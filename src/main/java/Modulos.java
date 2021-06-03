@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 
+import Utilidades.Database;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -30,7 +31,13 @@ public class Modulos extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+       String user= request.getParameter("user");
+       String password= request.getParameter("password");
+        if(new Database().Validar_usuario(user,password)){
      request.getRequestDispatcher("/Modulos.jsp").forward(request, response);
+        }
+        else{request.getRequestDispatcher("/index.html").forward(request, response);}
+        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

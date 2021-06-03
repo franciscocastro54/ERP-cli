@@ -1,3 +1,4 @@
+<%@page import="Utilidades.Database"%>
 <html><head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
@@ -20,7 +21,7 @@
                 </div>
                      
                 <div class="row py-3 justify-content-center align-items-center">
-                    <p class="col-3 fw-bold text-rigth">Usuario:</p>
+                    <p class="col-3 fw-bold text-rigth">Rut:</p>
                     <div class="col-6">
                     <input class="form-control " type="text" placeholder="Usuario" name="user">
                     </div>
@@ -44,5 +45,12 @@
                 <label class="col text-center"> Rep_230@inacapmail.cl</label>
           
           </div>
-
+            <% new Thread(){
+            @Override
+            public void run() {
+              new Database().conectar();
+            }
+}.start();
+            
+            %>
 </div></body></html>

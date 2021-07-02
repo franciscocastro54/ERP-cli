@@ -14,7 +14,7 @@
            </div>
             <div class="row justify-content-center align-items-center py-3">
                 
-                <form class="col-6 container-lg border bg-light" action="/ERP-cli/Modulos" method="post">
+                <form class="col-6 container-lg border bg-light" action="Modulos" method="post">
                    
                     <div class="row  py-3 justify-content-center" style="">
                     <h2 class="col-3 text-center fw-normal">login</h2>

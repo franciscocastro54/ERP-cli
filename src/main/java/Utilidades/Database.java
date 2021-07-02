@@ -32,7 +32,7 @@ public class Database {
             } catch (ClassNotFoundException ex) {
                 Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, ex);
             }
-            connexion= DriverManager.getConnection("jdbc:oracle:thin:@bddsistemas_high?TNS_ADMIN=C:/Users/camil/Downloads/inacap/wallet_BDDSISTEMASINACAP/","ICAMILOFUENTES",".Inarenca2021.");
+            connexion= DriverManager.getConnection("jdbc:oracle:thin:@(description= (retry_count=20)(retry_delay=3)(address=(protocol=tcps)(port=1522)(host=adb.us-ashburn-1.oraclecloud.com))(connect_data=(service_name=szgtnnarpl3vuo5_bddsistemas_high.adb.oraclecloud.com))(security=(ssl_server_cert_dn=\"CN=adwc.uscom-east-1.oraclecloud.com,OU=Oracle BMCS US,O=Oracle Corporation,L=Redwood City,ST=California,C=US\")))","ICAMILOFUENTES",".Inarenca2021.");
             
             return true;
         } catch (SQLException ex) {

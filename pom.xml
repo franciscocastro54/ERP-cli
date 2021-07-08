@@ -8,6 +8,7 @@
     <name>Clientes-1.0-SNAPSHOT</name>
     
     <properties>
+        <callback.host></callback.host>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
@@ -23,6 +24,11 @@
 <version>18.3.0.0</version>
 <type>jar</type>
 </dependency>
+        <dependency>
+            <groupId>com.google.firebase</groupId>
+            <artifactId>firebase-admin</artifactId>
+            <version>7.3.0</version>
+        </dependency>
         <dependency>
             <groupId>javax</groupId>
             <artifactId>javaee-api</artifactId>

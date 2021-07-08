@@ -18,51 +18,62 @@ import java.util.logging.Logger;
  * @author camil
  */
 public class Database {
+
     Connection connexion;
-    
-    
-    
-    
-    public boolean conectar(){
-    
-    
+
+    public boolean conectar() {
+
         try {
             try {
                 Class.forName("oracle.jdbc.driver.OracleDriver");
             } catch (ClassNotFoundException ex) {
                 Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, ex);
             }
-            connexion= DriverManager.getConnection("jdbc:oracle:thin:@(description= (retry_count=20)(retry_delay=3)(address=(protocol=tcps)(port=1522)(host=adb.us-ashburn-1.oraclecloud.com))(connect_data=(service_name=szgtnnarpl3vuo5_bddsistemas_high.adb.oraclecloud.com))(security=(ssl_server_cert_dn=\"CN=adwc.uscom-east-1.oraclecloud.com,OU=Oracle BMCS US,O=Oracle Corporation,L=Redwood City,ST=California,C=US\")))","ICAMILOFUENTES",".Inarenca2021.");
-            
+            connexion = DriverManager.getConnection("jdbc:oracle:thin:@(description= (retry_count=20)(retry_delay=3)(address=(protocol=tcps)(port=1522)(host=adb.us-ashburn-1.oraclecloud.com))(connect_data=(service_name=szgtnnarpl3vuo5_bddsistemas_high.adb.oraclecloud.com))(security=(ssl_server_cert_dn=\"CN=adwc.uscom-east-1.oraclecloud.com,OU=Oracle BMCS US,O=Oracle Corporation,L=Redwood City,ST=California,C=US\")))", "ICAMILOFUENTES", ".Inarenca2021.");
+
             return true;
         } catch (SQLException ex) {
             Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, ex);
         }
-    
-        
-        return false;
-    } 
-    
-    public boolean Validar_usuario(String user,String password){
-     try {
-         if(conectar()){
-             Statement st = connexion.createStatement();
-             ResultSet rs = st.executeQuery("select * from usuario where rut='"+user+"' and password='"+password+"'");
-              if(rs.next()) return true;
-              else return false;
 
-         
-         
-         }
+        return false;
+    }
+
+    public boolean Validar_usuario(String user, String password) {
+        try {
+            if (conectar()) {
+                Statement st = connexion.createStatement();
+                ResultSet rs = st.executeQuery("select * from usuario where rut='" + user + "' and password='" + password + "'");
+                if (rs.next()) {
+                    return true;
+                } else {
+                    return false;
+                }
+
+            }
         } catch (SQLException ex) {
             Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
-        
-    
-   return false;
+
+        return false;
     }
- 
-   
-    
+
+    public ResultSet Obtener_Resultado(String sql) {
+        ResultSet rs = null;
+        try {
+
+            if (conectar()) {
+                Statement st = connexion.createStatement();
+                rs = st.executeQuery(sql);
+                return rs;
+
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        return rs;
+
+    }
+
 }

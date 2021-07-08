@@ -1,8 +1,3 @@
-<%-- 
-    Document   : main
-    Created on : 16-may-2021, 20:38:54
-    Author     : camil
---%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -25,11 +20,11 @@
             <div class="row">
                 <div class="col-2">
                     <%--  aqui se incluye la barra izquierda  --%>
-                    <%@include file="../componentes/menu_mod.jsp" %>
+                    <%@include file="../componentes/menu_mod_CLi.jsp" %>
                 </div>
                 <div class="col-10">
                     <%--   aqui se incluye la direccion del componente  --%>
-                    <%@include file="../Clientes/Historial_clientes.jsp" %>
+                    <%@include file="" %>
                     <%--holo--%>
                </div>
             </div>

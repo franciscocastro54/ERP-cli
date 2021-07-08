@@ -36,7 +36,7 @@ public class Modulos_control extends HttpServlet {
 
             /* TODO output your page here. You may use following sample code. */
 
-         String modulo= request.getParameter("m").toString();
+         String modulo=(request.getParameter("m")!=null)? request.getParameter("m").toString():null;
            String opcion="";
            if(request.getParameter("op")!=null)opcion = request.getParameter("op").toString();
             /* TODO output your page here. You may use following sample code. */
@@ -56,7 +56,7 @@ public class Modulos_control extends HttpServlet {
             out.println("<div class=\"col-2\">");
   switch(modulo){
             case "cli":
-            request.getRequestDispatcher("/componentes/menu_mod.jsp").include(request, response);
+            request.getRequestDispatcher("/componentes/menu_mod_CLi.jsp").include(request, response);
             break;
             
             default:
@@ -103,7 +103,7 @@ public class Modulos_control extends HttpServlet {
                     request.getRequestDispatcher("/Clientes/cobranza-pagospendientes.jsp").include(request, response);
                     break;
                 default:
-                   //aqui va pagina por defecto
+                
                     break;
             }
             out.println("</div>");

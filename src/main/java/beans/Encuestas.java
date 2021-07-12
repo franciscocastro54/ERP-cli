@@ -5,15 +5,22 @@
  */
 package beans;
 
+import Utilidades.Database;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+
 /**
  *
  * @author camil
  */
 public class Encuestas {
-    int id;
-    String comentarios;
-    String url;
-    String fecha;
+
+    private int id;
+    private String comentarios;
+    private String url;
+    private Date fecha;
+    private String Cliente;
 
     public Encuestas() {
     }
@@ -42,12 +49,37 @@ public class Encuestas {
         this.url = url;
     }
 
-    public String getFecha() {
+    public Date getFecha() {
         return fecha;
     }
 
-    public void setFecha(String fecha) {
+    public void setFecha(Date fecha) {
         this.fecha = fecha;
     }
+
+    public String getCliente() {
+        return Cliente;
+    }
+
+    public void setCliente(String Cliente) {
+        this.Cliente = Cliente;
+    }
+
     
+  public boolean guerdar(){
+  SimpleDateFormat sim= new SimpleDateFormat("dd-MM-YYYY");
+  String sql="insert into ENCUESTAS(FECHA,URL,CLIENTE) values("
+          + "'"+sim.format(fecha)+"',"
+          + "'"+url+"',"
+          + "'"+Cliente+"'"
+          + ")";
+      Database db= new Database();
+      System.out.println(sql);
+     if(db.Ejecutar(sql)){System.out.println("ejecutar mando true");return true;}
+     else return false;
+  
+  
+  
+ 
+  }
 }

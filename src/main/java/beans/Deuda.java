@@ -5,16 +5,18 @@
  */
 package beans;
 
+import java.util.Date;
+
 /**
  *
  * @author camil
  */
 public class Deuda {
-    int id;
-    String fecha;
-    int monto;
-    String estado;
-
+   private int id;
+  private  Date fecha;
+ private   int monto;
+ private   String estado;
+private String cliente;
     public Deuda() {
     }
 
@@ -26,13 +28,23 @@ public class Deuda {
         this.id = id;
     }
 
-    public String getFecha() {
+    public Date getFecha() {
         return fecha;
     }
 
-    public void setFecha(String fecha) {
+    public void setFecha(Date fecha) {
         this.fecha = fecha;
     }
+
+    public String getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(String cliente) {
+        this.cliente = cliente;
+    }
+
+   
 
     public int getMonto() {
         return monto;

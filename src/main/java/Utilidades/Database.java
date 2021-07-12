@@ -29,14 +29,15 @@ public class Database {
             } catch (ClassNotFoundException ex) {
                 Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, ex);
             }
-            connexion = DriverManager.getConnection("jdbc:oracle:thin:@bddsistemas_high?TNS_ADMIN=wallet_BDDSISTEMASINACAP/", "ICAMILOFUENTES", ".Inarenca2021.");
+            String DB_URL="jdbc:oracle:thin:@(description= (retry_count=20)(retry_delay=3)(address=(protocol=tcps)(port=1522)(host=adb.us-ashburn-1.oraclecloud.com))(connect_data=(service_name=szgtnnarpl3vuo5_bddsistemas_high.adb.oraclecloud.com))(security=(ssl_server_cert_dn=\"CN=adwc.uscom-east-1.oraclecloud.com,OU=Oracle BMCS US,O=Oracle Corporation,L=Redwood City,ST=California,C=US\")))";
+            connexion = DriverManager.getConnection(DB_URL, "ICAMILOFUENTES", ".Inarenca2021.");
 
             return true;
         } catch (SQLException ex) {
             Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, ex);
+               return false; 
         }
 
-        return false;
     }
 
     public boolean Validar_usuario(String user, String password) {
@@ -53,6 +54,7 @@ public class Database {
             }
         } catch (SQLException ex) {
             Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, ex);
+            return false;
         }
 
         return false;
@@ -70,6 +72,7 @@ public class Database {
             }
         } catch (SQLException ex) {
             Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, ex);
+            
         }
 
         return rs;
@@ -80,12 +83,13 @@ public class Database {
 
             if (conectar()) {
                 Statement st = connexion.createStatement();
+              if(st.execute(sql)){System.out.println("execute true" );return true;};
               
-                return  st.equals(sql);
 
             }
         } catch (SQLException ex) {
             Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, ex);
+                return false;
         }
     
    
@@ -93,5 +97,27 @@ public class Database {
     
     return false;
     }
+    /*public boolean ExecuteCall(String sql){
+     try {
+
+            if (conectar()) {
+                Statement st = connexion.createStatement();
+                st.
+              if(st.(sql)){System.out.println("execute true" );return true;};
+              
+
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, ex);
+                return false;
+        }
+    
+   
+    
+    
+    return false;
+    
+    
+    }*/
 
 }

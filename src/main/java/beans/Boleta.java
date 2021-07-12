@@ -5,16 +5,20 @@
  */
 package beans;
 
+import java.util.Date;
+
 /**
  *
  * @author camil
  */
 public class Boleta {
-    
-    int id;
-    String fecha;
-    int monto;
-    String estado;
+
+    private int id;
+    private Date fecha;
+    private int monto;
+    private String estado;
+    private String url;
+    private String Cliente;
 
     public Boleta() {
     }
@@ -27,13 +31,14 @@ public class Boleta {
         this.id = id;
     }
 
-    public String getFecha() {
+    public Date getFecha() {
         return fecha;
     }
 
-    public void setFecha(String fecha) {
+    public void setFecha(Date fecha) {
         this.fecha = fecha;
     }
+
 
     public int getMonto() {
         return monto;
@@ -50,5 +55,21 @@ public class Boleta {
     public void setEstado(String estado) {
         this.estado = estado;
     }
-    
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
+    public String getCliente() {
+        return Cliente;
+    }
+
+    public void setCliente(String Cliente) {
+        this.Cliente = Cliente;
+    }
+
 }

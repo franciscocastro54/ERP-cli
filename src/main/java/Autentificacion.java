@@ -20,7 +20,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author camil
  */
-@WebServlet(urlPatterns = {"/Modulos"})
+@WebServlet(urlPatterns = {"/Autentificacion"})
 public class Autentificacion extends HttpServlet {
 
     /**

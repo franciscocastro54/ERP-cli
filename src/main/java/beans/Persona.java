@@ -6,7 +6,10 @@
 package beans;
 
 import java.util.Date;
-
+import beans.Cliente;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 /**
  *
  * @author camil
@@ -34,5 +37,20 @@ public class Persona extends Cliente{
         this.fecha_nacimiento = fecha_nacimiento;
     }
     
+    public boolean buscar(String rut) {
+       if(super.buscar(rut)){
+           try {
+               fecha_nacimiento=getInfo().getDate("FECHA_NACIMIENTO");
+             
+               return true;
+           } catch (SQLException ex) {
+               Logger.getLogger(Empresa.class.getName()).log(Level.SEVERE, null, ex);
+           }
+       }  return false; 
+      
+      
+           
     
+    
+    }
 }

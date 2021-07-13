@@ -258,9 +258,9 @@ public class Cliente {
             }
             ResultSet encuestasAux = base_datos.Obtener_Resultado(sql);
             encuestas = new ArrayList<Encuestas>();
-            
+
             while (encuestasAux.next()) {
-        
+
                 Encuestas encuesta = new Encuestas();
                 encuesta.setId(encuestasAux.getInt("ID"));
                 encuesta.setFecha(encuestasAux.getDate("FECHA"));
@@ -307,7 +307,7 @@ public class Cliente {
             if (idOrden != -1) {
                 sql = sql.concat(" and id=" + idOrden);
             }
-         
+
             ResultSet boletasAux = base_datos.Obtener_Resultado(sql);
             boletas = new ArrayList<Boleta>();
             while (boletasAux.next()) {
@@ -328,6 +328,7 @@ public class Cliente {
     }
 
     public boolean guardar() {
+        String sqlEmpresa = null;
         String sql1 = "insert into CLIENTE(RUT,NOMBRE,DIRECCION,EMAIL,TELEFONO,FECHA_INCRIPCION,"
                 + "TIPO_CLIENTE,COMUNA,ESTADO,";
         if (tipo_cliente.equals("EMPRESA")) {
@@ -337,33 +338,50 @@ public class Cliente {
         }
 
         String sql2 = "values("
-                + "RUT='" + rut + "',"
-                + "NOMBRE='" + nombre + "',"
-                + "DIRECCION='" + direccion + "',"
-                + "EMAIL='" + mail + "',"
-                + "TELEFONO='" + telefono + "',"
-                + "FECHA_INCRIPCION=SYSDATE,"
-                + "TIPO_CLIENTE=F_TIPO_CLIENTE('" + tipo_cliente + "'),"
-                + "COMUNA=F_COMUNA('" + Comuna + "'),"
-                + "ESTADO=F_ESTADO_CLIENTE('" + estado + "'),";
+                + "'" + rut + "',"
+                + "'" + nombre + "',"
+                + "'" + direccion + "',"
+                + "'" + mail + "',"
+                + "'" + telefono + "',"
+                + "SYSDATE,"
+                + "F_TIPO_CLIENTE('" + tipo_cliente + "'),"
+                + "F_COMUNA('" + Comuna + "'),"
+                + "F_ESTADO_CLIENTE('" + estado + "'),";
 
         if (tipo_cliente.equals("EMPRESA")) {
-            sql2 = sql2.concat("RUBRO=F_RUBRO('" + rubro + "'))");
+            sql2 = sql2.concat("F_RUBRO('" + rubro + "'))");
+
         } else if (tipo_cliente.equals("NATURAL")) {
             SimpleDateFormat sim = new SimpleDateFormat("dd-MM-YYYY");
-            sql2 = sql2.concat("FECHA_NACIMIENTO='" + sim.format(fecha_nacimiento) + "',"
-                    + "SEXO=F_SEXO('" + sexo + "'))");
+            sql2 = sql2.concat("'" + sim.format(fecha_nacimiento) + "',"
+                    + "F_SEXO('" + sexo + "'))");
         }
 
-        String sql = sql1 + sql2;
-        if (base_datos.Ejecutar(sql)) {
-            return true;
-        }
+        String sqlA = sql1 + sql2;
+         String   sqlB = "insert into REPRESENTANTE(RUT,NOMBRE) values("
+                        + "'" + rut_representante + "',"
+                        + "'" + nombre_representante + "'"
+                        + ")";
+          String      sqlC = "insert into REPRESENTANTE_CLIENTE(RUT_CLIENTE,RUT_REPRESENTANTE) values("
+                            + "'" + rut + "',"
+                            + "'" + rut_representante + "'"
+                            + ")";
+        System.out.println(sqlA);
+        if(tipo_cliente.equals("EMPRESA")){
+        if (base_datos.Ejecutar(sqlA)&base_datos.Ejecutar(sqlB)&base_datos.Ejecutar(sqlC)) {
 
-        return false;
+             return true;
+                }
+        } else if(base_datos.Ejecutar(sqlA)) return true;
+return false;
+         
+        
+
+      
     }
 
     public boolean modificar() {
+
         String sql = "update CLIENTE set "
                 + "NOMBRE='" + nombre + "',"
                 + "DIRECCION='" + direccion + "',"
@@ -372,18 +390,24 @@ public class Cliente {
                 + "TIPO_CLIENTE=F_TIPO_CLIENTE('" + tipo_cliente + "'),"
                 + "COMUNA=F_COMUNA('" + Comuna + "'),"
                 + "ESTADO=F_ESTADO_CLIENTE('" + estado + "'),";
-
+         String   sqlB = "insert into REPRESENTANTE(RUT,NOMBRE) values("
+                        + "'" + rut_representante + "',"
+                        + "'" + nombre_representante + "'"
+                        + ")";
+         String sqlC = "update REPRESENTANTE_CLIENTE set RUT_REPRESENTANTE='"+rut_representante+"' where RUT_CLIENTE='"+rut+"'";
         if (tipo_cliente.equals("EMPRESA")) {
             sql = sql.concat("RUBRO=F_RUBRO('" + rubro + "')");
+         
         } else if (tipo_cliente.equals("NATURAL")) {
             sql = sql.concat("FECHA_NACIMIENTO='" + fecha_nacimiento.toString() + "',"
                     + "SEXO=F_SEXO('" + sexo + "')");
         }
         sql = sql.concat(" where rut='" + rut + "'");
 
-        if (base_datos.Ejecutar(sql)) {
-            return true;
-        }
+      if (tipo_cliente.equals("EMPRESA")) { if (base_datos.Ejecutar(sql)&base_datos.Ejecutar(sqlB)&base_datos.Ejecutar(sqlC))  return true;
+        }else{
+          if (base_datos.Ejecutar(sql))  return true;
+      }
 
         return false;
     }

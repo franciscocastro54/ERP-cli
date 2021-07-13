@@ -5,6 +5,7 @@
  */
 package Utilidades;
 
+import java.io.File;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -29,9 +30,9 @@ public class Database {
             } catch (ClassNotFoundException ex) {
                 Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, ex);
             }
-            String DB_URL="jdbc:oracle:thin:@(description= (retry_count=20)(retry_delay=3)(address=(protocol=tcps)(port=1522)(host=adb.us-ashburn-1.oraclecloud.com))(connect_data=(service_name=szgtnnarpl3vuo5_bddsistemas_high.adb.oraclecloud.com))(security=(ssl_server_cert_dn=\"CN=adwc.uscom-east-1.oraclecloud.com,OU=Oracle BMCS US,O=Oracle Corporation,L=Redwood City,ST=California,C=US\")))";
+            String DB_URL="jdbc:oracle:thin:@bddsistemas_high?TNS_ADMIN=C:/Users/camil/Documents/NetBeansProjects/ERP_pruebas/src/main/java/wallet_BDDSISTEMASINACAP/";
             connexion = DriverManager.getConnection(DB_URL, "ICAMILOFUENTES", ".Inarenca2021.");
-
+            connexion.setAutoCommit(true);
             return true;
         } catch (SQLException ex) {
             Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, ex);
@@ -83,12 +84,14 @@ public class Database {
 
             if (conectar()) {
                 Statement st = connexion.createStatement();
-              if(st.execute(sql)){System.out.println("execute true" );return true;};
+              if(st.execute(sql)){System.out.println("execute true" );return true;}
+              else System.out.println("Error execute");
               
 
             }
         } catch (SQLException ex) {
             Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println(ex.getLocalizedMessage());
                 return false;
         }
     

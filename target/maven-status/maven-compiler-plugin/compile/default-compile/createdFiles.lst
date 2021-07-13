@@ -1,0 +1,14 @@
+com\mycompany\clientes\resources\JavaEE8Resource.class
+beans\Encuestas.class
+Autentificacion_class\Autentificacion_class.class
+Autentificacion.class
+beans\Boleta.class
+Modulos_control.class
+beans\Empresa.class
+beans\Cliente.class
+beans\Deuda.class
+beans\Usuario.class
+com\mycompany\clientes\JAXRSConfiguration.class
+Utilidades\Database.class
+beans\Orden_de_servicio.class
+beans\Persona.class

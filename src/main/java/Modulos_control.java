@@ -31,87 +31,89 @@ public class Modulos_control extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-   response.setContentType("text/html;charset=UTF-8");
+        response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
 
             /* TODO output your page here. You may use following sample code. */
-
-         String modulo=(request.getParameter("m")!=null)? request.getParameter("m").toString():null;
-           String opcion="";
-           if(request.getParameter("op")!=null)opcion = request.getParameter("op").toString();
+            String modulo = (request.getParameter("m") != null) ? request.getParameter("m").toString() : null;
+            String opcion = "";
+            if (request.getParameter("op") != null) {
+                opcion = request.getParameter("op").toString();
+            }
             /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 3.2 Final//EN\">");
             out.println("<html>");
             out.println("<head>");
             out.println("<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">");
             request.getRequestDispatcher("/css/cssdefault.jsp").include(request, response);
-            out.println("<title>Servlet NewServlet</title>");            
+            out.println("<title>ERP Integral</title>");
             out.println("</head>");
             out.println("<body>");
-            out.println("<div class=\"container-fluid\">");
+            out.println("<div class=\"container-fluid\" style=\"padding: 0px\">");
             out.println("<div class=\"row\">");
             request.getRequestDispatcher("/componentes/healer.jsp").include(request, response);
             out.println("</div>");
             out.println("<div class=\"row\">");
             out.println("<div class=\"col-2\">");
-  switch(modulo){
-            case "cli":
-            request.getRequestDispatcher("/componentes/menu_mod_CLi.jsp").include(request, response);
-            break;
-            
-            default:
-                //aqui va error404
-                out.println("<h2> ERROR DE MODULO</h2>");
-           break;
+            switch (modulo) {
+                case "cli":
+                    request.getRequestDispatcher("/componentes/menu_mod_CLi.jsp").include(request, response);
+                    break;
+
+                default:
+                    //aqui va error404
+                    out.println("<h2> ERROR DE MODULO</h2>");
+                    break;
             }
-       
-                    out.println("</div>");
+
+            out.println("</div>");
             out.println("<div class=\"col-10\">");
             //aqui abajo va el contenido  
-            switch(opcion){
+            switch (opcion) {
                 case "feed":
-            request.getRequestDispatcher("/Clientes/Feedback.jsp").include(request, response);
-                 break;
+                    request.getRequestDispatcher("/Clientes/Feedback.jsp").include(request, response);
+                    break;
                 case "His":
                     request.getRequestDispatcher("/Clientes/Historial_clientes.jsp").include(request, response);
                     break;
-                    case "modcli":
+                case "modcli":
                     request.getRequestDispatcher("/Clientes/ModificarCliente.jsp").include(request, response);
                     break;
-                    case "modemp":
+                case "modemp":
                     request.getRequestDispatcher("/Clientes/ModificarEmpresa.jsp").include(request, response);
                     break;
-                    case "regcli":
+                case "regcli":
                     request.getRequestDispatcher("/Clientes/RegistrarCliente.jsp").include(request, response);
                     break;
-                    case "regemp":
+                case "regemp":
                     request.getRequestDispatcher("/Clientes/RegistrarEmpresa.jsp").include(request, response);
                     break;
-                    case "ord":
+                case "ord":
                     request.getRequestDispatcher("/Clientes/ordenServicio.jsp").include(request, response);
                     break;
-                    case "def":
+                case "def":
                     request.getRequestDispatcher("/Clientes/DefinicionCriterios.jsp").include(request, response);
                     break;
-                    case "tab":
+                case "tab":
                     request.getRequestDispatcher("/Clientes/TablaFidelizacion.jsp").include(request, response);
                     break;
-                    case "cobinf":
+                case "cobinf":
                     request.getRequestDispatcher("/Clientes/Cobranza-informacion-del-cliente.jsp").include(request, response);
                     break;
-                    case "cobpag":
+                case "cobpag":
                     request.getRequestDispatcher("/Clientes/cobranza-pagospendientes.jsp").include(request, response);
                     break;
                 default:
-                
+
                     break;
             }
             out.println("</div>");
             out.println("</div>");
+            request.getRequestDispatcher("/componentes/bottom_bar.jsp").include(request, response);
             out.println("</div>");
             out.println("</body>");
             out.println("</html>");
-        
+
         }
     }
 

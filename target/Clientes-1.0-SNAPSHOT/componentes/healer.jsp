@@ -1,19 +1,19 @@
 <healer>
-    <div class="row">
+    <div class="row ">
 
-        
-              <img src="imagenes/log-large.jpeg" class="col-2 " >
-             
-          <div class="col-10">
-   <div class="btn-group" role="group" aria-label="Basic example">
-   <a href="/ERP-cli/Modulos_control"><button type="button" class="btn btn-primary">Home</button></a>
-   <a href="/ERP-cli/Modulos_control?m=cli"><button type="button" class="btn btn-primary">Clientes</button></a>
-   <a href="/ERP-cli/Modulos_control?m=ven"><button type="button" class="btn btn-primary">Ventas</button></a>
-   <a href="/ERP-cli/Modulos_control?m=com"><button type="button" class="btn btn-primary">Compras</button></a>
-   <a href="/ERP-cli/Modulos_control?m=inv"><button type="button" class="btn btn-primary">Inventario</button></a>
-   <a href="/ERP-cli/Modulos_control?m=fin"><button type="button" class="btn btn-primary">Finanzas</button></a>
-   <a href="/ERP-cli/Modulos_control?m=adm"><button type="button" class="btn btn-primary">administración</button></a>
-</div>
-          </div>
-         </div>
+
+        <img src="imagenes/log-large.jpeg" class="col-2 rounded mx-auto d-block" style="padding: 0px">
+
+        <div class="col-10 btn-group "  role="group" aria-label="Basic example" style="padding: 0px">
+
+            <a href="/ERP-cli/Modulos_control" type="button" class="btn btn-primary align-middle"><strong>Home</strong></a>
+            <a href="/ERP-cli/Modulos_control?m=cli" type="button" class="btn btn-primary align-middle"><strong>Clientes</strong></a>
+            <a href="/ERP-cli/Modulos_control?m=ven" type="button" class="btn btn-primary align-middle"><strong>Ventas</strong></a>
+            <a href="/ERP-cli/Modulos_control?m=com" type="button" class="btn btn-primary align-middle"><strong>Compras</strong></a>
+            <a href="/ERP-cli/Modulos_control?m=inv" type="button" class="btn btn-primary align-middle"><strong>Inventario</strong></a>
+            <a href="/ERP-cli/Modulos_control?m=fin" type="button" class="btn btn-primary align-middle"><strong>Finanzas</strong></a>
+            <a href="/ERP-cli/Modulos_control?m=adm" type="button" class="btn btn-primary align-middle"><strong>Administración</strong></a>
+<a href="/ERP-cli/" type="button" class="btn btn-primary align-middle"><strong>Cerrar sesion</strong></a>
+        </div>
+    </div>
 </healer>

@@ -35,7 +35,7 @@
                 console.log('validando')
                 auth.signInWithEmailAndPassword(email, password).then((userCredential => {
                     console.log('validado')
-                    document.location.href = "Modulos_control?m=cli"
+                    document.location.href = "Modulos_control"
                     const re =request.headers
                     console.log(re)
 
@@ -52,8 +52,11 @@
     </head>
     <body>
         <div class="container-fluid">
-            <div class="row justify-content-center" style="padding-bottom: 3em">
-                <img src="imagenes/log-large.jpeg" class="col-3">
+            
+            <div class="row justify-content-center " >
+               <div class="col-md-12 container-fluid" style="background-color: cornflowerblue; color: #FFF;">
+                <img src="imagenes/log-large.jpeg" class="rounded mx-auto d-block">
+               </div>
             </div>
             <div class="row justify-content-center align-items-center py-3">
 
@@ -76,19 +79,14 @@
                     </div>
                 </div>
                 <div class="row justify-content-center" style="padding-top: 3em; padding-bottom: 2em">
-                    <input class="col-4 btn btn-primary" type="submit" onclick="validar()">
+                    <input class="col-4 btn btn-primary" type="submit" onclick="validar()" value="Entrar">
             
                 </div>
 
                 </div>
 
             </div>
-            <div class=" row  justify-content-center  align-items-center " style="padding-top: 5em">
-                <label class="col text-center">ERP seccion 230</label>
-                <label class="col text-center">Bravo de saravia 2980</label>
-                <label class="col text-center"> Rep_230@inacapmail.cl</label>
-
-            </div>
+            <%@ include file="componentes/bottom_bar.jsp" %>  
             <% new Thread() {
                     @Override
                     public void run() {

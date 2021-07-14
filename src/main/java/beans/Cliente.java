@@ -226,9 +226,14 @@ public class Cliente {
 
     public boolean buscar_orden_servicio(int idOrden) {
         try {
-            String sql = "SELECT * FROM VISTA_ORDEN_SERVICIO where RUT_CLIENTE='" + rut + "'";
+            boolean flag=(rut!=null);
+            String sql = (flag)?
+                    "SELECT * FROM VISTA_ORDEN_SERVICIO where RUT_CLIENTE='" + rut + "'"
+                    :"SELECT * FROM VISTA_ORDEN_SERVICIO ";
             if (idOrden != -1) {
-                sql = sql.concat(" and id=" + idOrden);
+                sql = (flag)?
+                        sql.concat(" and id=" + idOrden)
+                      :sql.concat(" where  id=" + idOrden);
             }
             ResultSet ordenes = base_datos.Obtener_Resultado(sql);
             orden_de_servicio = new ArrayList<Orden_de_servicio>();
@@ -252,9 +257,14 @@ public class Cliente {
 
     public boolean buscar_Encuestas(int idOrden) {
         try {
-            String sql = "SELECT * FROM VISTA_ENCUESTAS where CLIENTE='" + rut + "'";
+             boolean flag=(rut!=null);
+            String sql =(flag)?
+                    "SELECT * FROM VISTA_ENCUESTAS where CLIENTE='" + rut + "'"
+                    :"SELECT * FROM VISTA_ENCUESTAS";
             if (idOrden != -1) {
-                sql = sql.concat(" and id=" + idOrden);
+                sql = (flag)?
+                        sql.concat(" and id=" + idOrden)
+                     :sql.concat(" where  id=" + idOrden);
             }
             ResultSet encuestasAux = base_datos.Obtener_Resultado(sql);
             encuestas = new ArrayList<Encuestas>();
@@ -278,9 +288,12 @@ public class Cliente {
 
     public boolean buscar_Deudas(int idOrden) {
         try {
-            String sql = "SELECT * FROM VISTA_DEUDORES where CLIENTE='" + rut + "'";
+             boolean flag=(rut!=null);
+            String sql = (flag)?"SELECT * FROM VISTA_DEUDORES where CLIENTE='" + rut + "'"
+                    :"SELECT * FROM VISTA_DEUDORES ";
             if (idOrden != -1) {
-                sql = sql.concat(" and id=" + idOrden);
+                sql = (flag)?sql.concat(" and id=" + idOrden)
+                       :sql.concat(" where  id=" + idOrden);
             }
             ResultSet deudasaux = base_datos.Obtener_Resultado(sql);
             this.deudas = new ArrayList<Deuda>();
@@ -302,10 +315,12 @@ public class Cliente {
     }
 
     public boolean buscar_Boletas(int idOrden) {
-        try {
-            String sql = "SELECT * FROM VISTA_BOLETAS where CLIENTE='" + rut + "'";
+        try {boolean flag=(rut!=null);
+            String sql = (flag)?"SELECT * FROM VISTA_BOLETAS where CLIENTE='" + rut + "'"
+                    :"SELECT * FROM VISTA_BOLETAS";
             if (idOrden != -1) {
-                sql = sql.concat(" and id=" + idOrden);
+                sql = (flag)?sql.concat(" and id=" + idOrden)
+                        :sql.concat(" where  id=" + idOrden);
             }
 
             ResultSet boletasAux = base_datos.Obtener_Resultado(sql);

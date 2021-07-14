@@ -1,5 +1,5 @@
 
-<div class="accordion h-auto d-inline-block" id="accordionExample" style="height: 100%">
+        <div class="accordion h-auto d-inline-block" id="accordionExample" style="height: 100%;width: 100%">
     <div class="accordion-item " >
         <h2 class="accordion-header" id="headingOne">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
@@ -20,7 +20,7 @@
     <div class="accordion-item">
         <h2 class="accordion-header" id="headingTwo">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                <strong>    COBRANZA</strong> 
+                <strong>COBRANZA</strong> 
             </button>
         </h2>
         <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
@@ -59,7 +59,7 @@
     <div class="accordion-item">
         <h2 class="accordion-header" id="headingFive">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                <strong>  FIDELIZACION</strong> 
+                <strong>FIDELIZACION</strong> 
             </button>
         </h2>
         <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">

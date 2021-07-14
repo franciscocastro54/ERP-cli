@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 
+import Utilidades.Database;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
@@ -31,6 +32,8 @@ public class Modulos_control extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+       String path= request.getServletContext().getRealPath("/");
+        Database.path=path;
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
 
@@ -46,7 +49,7 @@ public class Modulos_control extends HttpServlet {
             out.println("<head>");
             out.println("<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">");
             request.getRequestDispatcher("/css/cssdefault.jsp").include(request, response);
-            out.println("<title>ERP Integral</title>");
+            out.println("<title>ERP Integral </title>");
             out.println("</head>");
             out.println("<body>");
             out.println("<div class=\"container-fluid\" style=\"padding: 0px\">");

@@ -87,12 +87,8 @@
 
             </div>
             <%@ include file="componentes/bottom_bar.jsp" %>  
-            <% new Thread() {
-                    @Override
-                    public void run() {
-                        new Database().conectar();
-                    }
-                }.start();
-
-            %>
+   <%
+   Database.path=getServletContext().getRealPath("/");
+   
+   %>
         </div></body></html>

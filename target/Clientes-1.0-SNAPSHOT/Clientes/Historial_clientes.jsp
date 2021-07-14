@@ -1,3 +1,4 @@
+<%@page import="beans.Cliente"%>
 <html>
     <body>
         <main class="container-fluid">
@@ -7,7 +8,10 @@
 
             <form class="row justify-content-center  align-items-center">
                 <label class="col-1">Rut:</label>
-                <input type="text" class="col-4 ">
+           <%   
+              Cliente cliente = new Cliente();
+              cliente.buscar("12345678-9");
+                    out.print("<input type=\"text\" class=\"col-4 \" value=\""+cliente.getNombre()+"\">");%>
                 <input type="submit" class="col-1" value="Buscar">
             </form>
             <div class="row">

@@ -40,6 +40,8 @@ public class Cliente {
     private ArrayList<Deuda> deudas;
     private ArrayList<Orden_de_servicio> orden_de_servicio;
     private ArrayList<Encuestas> encuestas;
+    
+    
     private Database base_datos;
     private ResultSet info;
 

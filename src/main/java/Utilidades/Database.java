@@ -17,28 +17,31 @@ import java.util.logging.Logger;
 /**
  *
  * @author camil
+ * @
  */
 public class Database {
 
     Connection connexion;
+    public static String path;
 
     public boolean conectar() {
-
         try {
             try {
                 Class.forName("oracle.jdbc.driver.OracleDriver");
             } catch (ClassNotFoundException ex) {
                 Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, ex);
             }
-            String DB_URL="jdbc:oracle:thin:@bddsistemas_high?TNS_ADMIN=C:/Users/camil/Documents/NetBeansProjects/ERP_pruebas/src/main/java/wallet_BDDSISTEMASINACAP/";
+
+            System.out.println(System.getProperty("user.dir"));
+
+            String DB_URL = "jdbc:oracle:thin:@bddsistemas_high?TNS_ADMIN=" + path + "/wallet_BDDSISTEMASINACAP/";
             connexion = DriverManager.getConnection(DB_URL, "ICAMILOFUENTES", ".Inarenca2021.");
             connexion.setAutoCommit(true);
             return true;
         } catch (SQLException ex) {
             Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, ex);
-               return false; 
+            return false;
         }
-
     }
 
     public boolean Validar_usuario(String user, String password) {
@@ -73,32 +76,33 @@ public class Database {
             }
         } catch (SQLException ex) {
             Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, ex);
-            
+
         }
 
         return rs;
 
     }
-    public boolean Ejecutar(String sql){
-    try {
+
+    public boolean Ejecutar(String sql) {
+        try {
 
             if (conectar()) {
                 Statement st = connexion.createStatement();
-              if(st.execute(sql)){System.out.println("execute true" );return true;}
-              else System.out.println("Error execute");
-              
+                if (st.execute(sql)) {
+                    System.out.println("execute true");
+                    return true;
+                } else {
+                    System.out.println("Error execute");
+                }
 
             }
         } catch (SQLException ex) {
             Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, ex);
             System.out.println(ex.getLocalizedMessage());
-                return false;
+            return false;
         }
-    
-   
-    
-    
-    return false;
+
+        return false;
     }
     /*public boolean ExecuteCall(String sql){
      try {

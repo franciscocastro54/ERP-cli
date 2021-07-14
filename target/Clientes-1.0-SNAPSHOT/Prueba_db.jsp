@@ -15,10 +15,11 @@
     </head>
     <body>
         <%
-        
+        Database.path= getServletContext().getRealPath("/");
         Database db= new Database();
-        if(db.conectar()) out.print("<h2>Resulto</h2>");
-        else out.println("<h2>no resulto</h2>");
+    
+       if(db.conectar()) out.print("<h2>Resulto</h2>");
+      else out.println("<h2>no resulto</h2>");
         
         %>
     </body>

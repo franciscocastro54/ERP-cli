@@ -32,7 +32,7 @@
 <label for="customRange1" class="form-label">Monto gastado a la fecha</label>
 <input type="range" class="form-range" id="customRange1">
 
-<a href="/ERP-cli/Modulos_control?m=cli&op=tab"><button type="button" class="btn btn-primary">Buscar</button></a>
+<a href="Modulos_control?m=cli&op=tab"><button type="button" class="btn btn-primary">Buscar</button></a>
  
    </div>   
   </div>

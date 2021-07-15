@@ -8,11 +8,12 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
     </head>
 <body>
+    <div class="container">
+        <div class="row align-items-center py-2">
     <h3 style="text-align: center ">Beneficiarios</h3>
- <div class="container">
+        </div>
   <div class="row">
    <div class="col-xs-12">
-       
    <table class="table table-hover table-sm">
   <thead>
     <tr class="table-active">
@@ -125,13 +126,16 @@
     
   </tbody>
 </table>
+      </div>
+  </div>
+        <div class="row justify-content-center align-self-center py-2">
        
-       <div class="form-group">
-            <label for="" class="col-3 col-form-label"></label>
+           
             <button type="submit" class="btn btn-primary col-2">Enviar correo</button>
+     
         </div>
    </div>   
-  </div>
+ 
  </div>
     
  <script src="js/jquery.min.js"></script>

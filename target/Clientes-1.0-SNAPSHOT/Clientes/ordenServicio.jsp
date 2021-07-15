@@ -1,82 +1,87 @@
-<html>
-<body>
-<main class="container-fluid">
-<div class="row justify-content-center  align-items-center">
-    <h2 class="col-6 text-center">Ingrese orden de servicio</h2>
-</div>
+<form class="container-fluid">
+    <div class="row justify-content-center py-2">
+        
+        
+    <h2 class="p-2 col-6 text-center">Orden de Servicio</h2>
+        </div>
+   
+<div class="row justify-content-center  align-items-center py-1">   
+        <div class="col-2 ">
+            <label class="">Rut:</label>
+        </div>
+        <div class="col-5">
+            <input type="text" class="form-control" id="rut" placeholder="123456-7"/>
+        </div>
+        <input type="button" class="col-1 btn btn-primary" value="Buscar">
+    </div>
     
-        <form class="row justify-content-center  align-items-center">
-        <div class="row">
-                <form action="">
-                    <div class="form-group">
-                        <label for="" class="col-2 col-form-label">RUT:</label>
-                        <input type="txt" placeholder="Ingrese su rut" class="col-6">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="" class="col-2 col-form-label">Nombre:</label>
-                        <input type="txt" placeholder="Ingrese nombre" class="col-6">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="" class="col-2 col-form-label">correo electronico:</label>
-                        <input type="txt" placeholder="example@mail.com" class="col-6">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="" class="col-2 col-form-label">confirmar correo:</label>
-                        <input type="txt" placeholder="example@mail.com" class="col-6">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="" class="col-2 col-form-label">Telefono:</label>
-                        <input type="txt" placeholder="Ingrese su rut" class="col-6">
-                    </div>
-                    
-                    <div class="form-group">                                   
-                        <label for="" class="col-2 col-form-label">Dirección:</label>
-                        <input type="txt" placeholder="calle 123,comuna,region" class="col-6">
-                    </div>
-                    
-                    <div class="col-2 ">
-                        <label class="">Departamento:</label>
-                    </div>
-    
-                    <div class="col-6">
-                        <select class="form-select" aria-label="Default select example">
-                            <option selected>seleccionar departameto</option>
-                            <option value="1">Finanzas</option>
-                            <option value="2">Ventas</option>
-                        </select>
-                    </div>
-    
-    
-                        
-                    <div class="form-group">   
-                        <label for="" class="col-2 col-form-label">Telefono:</label>
-                        <input type="txt" placeholder="+569 12345678" class="col-6">
-                    </div>
-                    
-                    <div class="form-group">   
-                        
-                            <label for="" class="col-2 col-form-label">Descripción:</label>
-                            
-                                <textarea class="" rows="1" cols="60"></textarea>
-                            
-                    </div>    
-                    
-                    <br>
-                    
-                    <div class="form-group">
-                        <label for="" class="col-3 col-form-label"></label>
-                        <button type="submit" class="btn btn-primary col-2">Ingresar Orden</button>
-                    </div>
-                    
-                </div>        
-                </form>
-            </div>
-        </form>
 
-</main>
+    <div class="row justify-content-center  align-items-center py-1">   
+    <div class="col-2 ">
+            <label class="">Nombre:</label>
+    </div>
+    <div class="col-6">
+           <input type="text" class="form-control" id="nombre" placeholder="Nombre "/>
+    </div>
+    </div>
+  <div class="row justify-content-center  align-items-center py-1">   
+    <div class="col-2 ">
+            <label class="">Apellido:</label>
+    </div>
+    <div class="col-6">
+           <input type="text" class="form-control" id="apellido" placeholder="Apellido"/>
+    </div>
+    </div>
+    <div class="row justify-content-center  align-items-center py-1">   
+    <div class="col-2 ">
+            <label class="">Correo Electronico:</label>
+    </div>
+    <div class="col-6">
+        <input type="email" class="form-control" id="mail" placeholder="example@example.com"/>
+    </div>
+    </div>
+    <div class="row justify-content-center  align-items-center py-1">   
+    <div class="col-2 ">
+            <label class="">Confirmar Correo:</label>
+    </div>
+    <div class="col-6">
+        <input type="email" class="form-control" id="mail" placeholder="example@example.com"/>
+    </div>
+    </div>
+    <div class="row justify-content-center  align-items-center py-1">   
+    <div class="col-2 ">
+            <label class="">Telefono:</label>
+    </div>
+    <div class="col-6">
+           <input type="text" class="form-control" id="telefono" placeholder="+56912345678"/>
+    </div>
+    </div>
+    <div class="row justify-content-center  align-items-center py-1">   
+    <div class="col-2 ">
+            <label class="">Departamento:</label>
+    </div>
+    <div class="col-6">
+        <select class="form-select" id="departamento" aria-label="Default select example">
+            <option selected>seleccionar departamento</option>
+            <option value="1">Finanzas</option>
+            <option value="2">Ventas</option>
+            
+        </select>
+    </div>
+    </div>
+    <div class="row justify-content-center  align-items-center py-1">   
+    <div class="col-2 ">
+            <label class="">Direccion:</label>
+    </div>
+    <div class="col-6">
+           <input type="text" class="form-control" id="direccion" placeholder="Example 1234"/>
+    </div>
+    </div>
     
-</body></html>
+    <div class="row justify-content-center  align-items-center py-1">   
+    
+    
+    <div class="p-2 row justify-content-center  align-items-center py-1">
+        <input type="submit" class="col-4 btn btn-primary" value="Ingresar orden">
+    </div>
+    </form>

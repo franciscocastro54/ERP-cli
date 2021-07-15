@@ -8,7 +8,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
     </head>
 <body>
-    <h3 style="text-align: center ">Encuesta de satisfaccion</h3>
+    <h3 style="text-align: center ">Encuesta de satisfacción</h3>
  <div class="container">
   <div class="row">
    <div class="col-xs-12">

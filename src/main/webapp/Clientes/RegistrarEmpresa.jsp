@@ -87,7 +87,7 @@
     </div>
     <div class="row justify-content-center  align-items-center py-1">   
         <div class="col-2 ">
-            <label class="">Direccion:</label>
+            <label class="">Dirección:</label>
         </div>
         <div class="col-6">
             <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Example 1234"/>

@@ -34,7 +34,7 @@
                             <tr><td><strong>Correo electronico:</strong></td><td>example@example.com</td></tr>
                             <tr><td><strong>Teléfono:</strong></td><td>+56912345678</td></tr>
                             <tr><td><strong>Comuna:</strong></td><td>Santiago</td></tr>
-                            <tr><td><strong>Direccion:</strong></td><td>example 123</td></tr>
+                            <tr><td><strong>Dirección:</strong></td><td>example 123</td></tr>
                             <tr><td><strong>Fecha de nacimiento:</strong></td><td>22-03-2000</td></tr>
                             <tr><td><strong>Sexo:</strong></td><td>Masculino</td></tr>
                         </table>

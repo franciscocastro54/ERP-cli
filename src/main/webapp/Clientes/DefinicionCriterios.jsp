@@ -7,31 +7,32 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
     </head>
-<body>
+    <body><br>
     <h3 style="text-align: center ">Definicion de Criterios de Fidelizacion</h3>
     <h6 style="text-align: center ">Elija los parametros para escoger a beneficiarios.</h6>
+    
  <div class="container">
   <div class="row">
    <div class="col-xs-12">
-<div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-  <label class="form-check-label" for="flexCheckChecked">
-    Clientes sin deudas (vencidas/morosas)
-  </label>
-</div>
        
-<div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-  <label class="form-check-label" for="flexCheckChecked">
-    Cliente contesta encuesta
-  </label>
+<div class="dropdown">
+  <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Años como cliente
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href="#">1</a>
+    <a class="dropdown-item" href="#">2</a>
+    <a class="dropdown-item" href="#">3</a>
+    <a class="dropdown-item" href="#">4</a>
+    <a class="dropdown-item" href="#">5</a>
+    <a class="dropdown-item" href="#">6</a>
+    <a class="dropdown-item" href="#">7</a>
+    <a class="dropdown-item" href="#">8</a>
+    <a class="dropdown-item" href="#">9</a>
+    <a class="dropdown-item" href="#">10</a>
+  </div>
 </div>
- <label for="customRange1" class="form-label">Tiempo como cliente</label>
-<input type="range" class="form-range" id="customRange1">    
-
-<label for="customRange1" class="form-label">Monto gastado a la fecha</label>
-<input type="range" class="form-range" id="customRange1">
-
+       <br><br><br><br>
 <a href="Modulos_control?m=cli&op=tab"><button type="button" class="btn btn-primary">Buscar</button></a>
  
    </div>   

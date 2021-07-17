@@ -65,6 +65,7 @@
         <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
             <div class="accordion-body" style="padding: 0px">
                 <a href="Modulos_control?m=cli&op=def" class="nav-link list-group-item">BUSCAR BENEFICIARIO</a>
+                <a href="https://docs.google.com/forms/u/0/" class="nav-link list-group-item">ACCESO GOOGLE FORMS</a>
             </div>
         </div>
     </div>
@@ -77,7 +78,7 @@
         <div id="collapseSix" class="accordion-collapse collapse " aria-labelledby="headingSix" data-bs-parent="#accordionExample">
             <div class="accordion-body" style="padding: 0px">
                 <a href="Modulos_control?m=cli&op=feed" class="nav-link list-group-item">BUSCAR CLIENTES</a>
-                <a href="https://docs.google.com/forms/u/0/" class="nav-link list-group-item">ACCESO GOOGLE FROMS</a>
+                <a href="https://docs.google.com/forms/u/0/" class="nav-link list-group-item">ACCESO GOOGLE FORMS</a>
             </div>
         </div>
     </div>

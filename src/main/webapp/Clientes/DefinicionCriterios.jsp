@@ -15,36 +15,26 @@
   <div class="row">
    <div class="col text-center">
        
-<div class="dropdown">
-  <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Años como cliente
-  </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item" href="#">1</a>
-    <a class="dropdown-item" href="#">2</a>
-    <a class="dropdown-item" href="#">3</a>
-    <a class="dropdown-item" href="#">4</a>
-    <a class="dropdown-item" href="#">5</a>
-    <a class="dropdown-item" href="#">6</a>
-    <a class="dropdown-item" href="#">7</a>
-    <a class="dropdown-item" href="#">8</a>
-    <a class="dropdown-item" href="#">9</a>
-    <a class="dropdown-item" href="#">10</a>
-  </div>
-</div>
+<select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+  <option selected>Años como cliente:</option>
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+  <option value="5">5</option>
+</select>
+     
+<select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+  <option selected>Estado de boleta:</option>
+  <option value="1">Pagada</option>
+  <option value="2">Pendiente</option>
+  <option value="3">Vencida</option>
+  <option value="3">Morosa</option>
+</select>
+       
        <br><br>
-       <div class="dropdown">
-  <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Estado deuda
-  </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item" href="#">Sin deuda vigente</a>
-    <a class="dropdown-item" href="#">Con deuda vigente</a>
-
-  </div>
-</div>
-       <br><br><br><br>
-<a href="Modulos_control?m=cli&op=tab"><button type="button" class="btn btn-primary">Buscar</button></a>
+       <a href="Modulos_control?m=cli&op=tab"><button type="button" class="btn btn-primary">Buscar</button></a>
+       <br><br>
  
    </div>   
   </div>

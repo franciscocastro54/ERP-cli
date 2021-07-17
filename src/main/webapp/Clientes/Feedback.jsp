@@ -31,7 +31,7 @@
       <td>20576454-4</td>
       <td>Juanin</td>
       <td>00000001</td>
-      <td>https://docs.google.com/forms/u/0/</td>
+      <td>https://docs.google.com/forms/d/e/1FAIpQLSdnXWERsV01176JleG0-T_vJJKZIiaMCj_RBg6ApYHHX5cTwg/viewform?usp=sf_link</td>
             <td><input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked></td>
     </tr>
     <tr>
@@ -39,7 +39,7 @@
       <td>15675465-9</td>
       <td>Juanina</td>
       <td>00000002</td>
-      <td>https://docs.google.com/forms/u/0/</td>
+      <td>https://docs.google.com/forms/d/e/1FAIpQLSdnXWERsV01176JleG0-T_vJJKZIiaMCj_RBg6ApYHHX5cTwg/viewform?usp=sf_link</td>
             <td><input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked></td>
     </tr>
     <tr>

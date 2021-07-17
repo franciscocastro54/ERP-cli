@@ -19,11 +19,12 @@
   <thead>
     <tr class="table-active">
       <th scope="col-1">#</th>
-      <th scope="col-3">RUT</th>
-      <th scope="col-2">Nombre</th>
+      <th scope="col-2">RUT</th>
+      <th scope="col-1">Nombre</th>
       <th scope="col-2">Email</th>
       <th scope="col-2">ID Encuesta</th>
       <th scope="col-2">Años como cliente</th>
+      <th scope="col-2">Boleta
     </tr>
   </thead>
   <tbody>
@@ -36,6 +37,7 @@
       <td name="email">juanin@gmail.com</td>
       <td name="ID">00000001</td>
       <td>1</td>
+      <td>Pagada</td>
     </tr>
     
     <tr>
@@ -47,6 +49,7 @@
       <td>juanina@gmail.com</td>
       <td>00000002</td>
       <td>1</td>
+      <td>Pagada</td>
     </tr>
     
     <tr>
@@ -58,6 +61,7 @@
       <td name="email">juanin@gmail.com</td>
       <td name="ID">00000003</td>
       <td>1</td>
+      <td>Pagada</td>
     </tr>   
    
   </tbody>

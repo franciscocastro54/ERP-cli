@@ -10,7 +10,7 @@
     <body><br>
     <h3 style="text-align: center ">Definicion de Criterios de Fidelizacion</h3>
     <h6 style="text-align: center ">Elija los parametros para escoger a beneficiarios.</h6>
-    
+    <br>
  <div class="container">
   <div class="row">
    <div class="col-xs-12">

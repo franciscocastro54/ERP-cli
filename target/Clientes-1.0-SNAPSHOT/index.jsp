@@ -63,7 +63,7 @@
                 <div class="col-6 container-lg border bg-light"  >
                
                 <div class="row  py-3 justify-content-center" style="">
-                    <h2 class="col-3 text-center fw-normal">login</h2>
+                    <h2 class="col-3 text-center fw-normal">Iniciar Sesion</h2>
                 </div>
 
                 <div class="row py-3 justify-content-center align-items-center">

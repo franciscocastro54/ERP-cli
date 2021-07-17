@@ -13,7 +13,7 @@
     <br>
  <div class="container">
   <div class="row">
-   <div class="col-xs-12">
+   <div class="col text-center">
        
 <div class="dropdown">
   <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -32,9 +32,10 @@
     <a class="dropdown-item" href="#">10</a>
   </div>
 </div>
+       <br><br>
        <div class="dropdown">
   <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Años como cliente
+    Estado deuda
   </button>
   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
     <a class="dropdown-item" href="#">Sin deuda vigente</a>

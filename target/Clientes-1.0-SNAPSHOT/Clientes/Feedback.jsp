@@ -8,6 +8,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
     </head>
 <body>
+    <br>
     <h3 style="text-align: center ">Encuesta de satisfacción</h3>
  <div class="container">
   <div class="row">
@@ -21,6 +22,7 @@
       <th scope="col">Nombre</th>
       <th scope="col">ID Encuesta</th>
       <th scope="col">URL</th>
+      <th scope="col">Enviar</th>
     </tr>
   </thead>
   <tbody>
@@ -30,6 +32,7 @@
       <td>Juanin</td>
       <td>00000001</td>
       <td>https://docs.google.com/forms/u/0/</td>
+            <td><input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked></td>
     </tr>
     <tr>
       <th scope="row">2</th>
@@ -37,6 +40,7 @@
       <td>Juanina</td>
       <td>00000002</td>
       <td>https://docs.google.com/forms/u/0/</td>
+            <td><input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked></td>
     </tr>
     <tr>
     <th scope="row">3</th>
@@ -44,6 +48,7 @@
       <td>Juanito</td>
       <td>-</td>
       <td>-</td>
+            <td><input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked></td>
     </tr>
     <tr>
       <th scope="row">4</th>
@@ -51,6 +56,7 @@
       <td>Placeholder</td>
       <td>Placeholder</td>
       <td>Placeholder</td>
+            <td><input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked></td>
     </tr>
     <tr>
       <th scope="row">5</th>
@@ -58,6 +64,7 @@
       <td>Placeholder</td>
       <td>Placeholder</td>
       <td>Placeholder</td>
+            <td><input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked></td>
     </tr>
     <tr>
       <th scope="row">6</th>
@@ -65,6 +72,7 @@
       <td>Placeholder</td>
       <td>Placeholder</td>
       <td>Placeholder</td>
+            <td><input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked></td>
     </tr> 
     <tr>
       <th scope="row">7</th>
@@ -72,6 +80,7 @@
       <td>Placeholder</td>
       <td>Placeholder</td>
       <td>Placeholder</td>
+             <td><input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked></td>
     </tr> 
     <tr>
       <th scope="row">8</th>
@@ -79,9 +88,16 @@
       <td>Placeholder</td>
       <td>Placeholder</td>
       <td>Placeholder</td>
+            <td><input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked></td>
     </tr>
   </tbody>
 </table>
+       <div class="row justify-content-center align-self-center py-2">
+       
+           
+            <button type="submit" class="btn btn-primary col-2">Enviar correo</button>
+     
+        </div>
    </div>   
   </div>
  </div>

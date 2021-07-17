@@ -37,8 +37,8 @@
                             href="https://api.whatsapp.com/send/?phone=56959284757&text&app_absent=0">
                              Whatsapp: +56 9 59284757</a>
                          <a class="text-center nav-link" style="color: #FFF;"
-                            href="https://accounts.google.com/ServiceLogin?continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&service=mail&sacu=1&rip=1">
-                             Correo: erpintegral@gmail.com</a>
+                            href="mailto:erpintegral2021@gmail.com">
+                             Correo: erpintegral2021@gmail.com</a>
 
                     </div>
                 </div>

@@ -67,7 +67,7 @@
         <div class="row justify-content-center align-self-center py-2">
        
            
-            <button type="submit" class="btn btn-primary col-2">Enviar correo y encuesta</button>
+            <button type="submit" class="btn btn-primary col-2">Enviar correo</button>
      
         </div>
    </div>   

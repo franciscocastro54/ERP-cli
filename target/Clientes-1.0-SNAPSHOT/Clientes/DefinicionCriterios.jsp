@@ -32,6 +32,16 @@
     <a class="dropdown-item" href="#">10</a>
   </div>
 </div>
+       <div class="dropdown">
+  <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Años como cliente
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href="#">Sin deuda vigente</a>
+    <a class="dropdown-item" href="#">Con deuda vigente</a>
+
+  </div>
+</div>
        <br><br><br><br>
 <a href="Modulos_control?m=cli&op=tab"><button type="button" class="btn btn-primary">Buscar</button></a>
  

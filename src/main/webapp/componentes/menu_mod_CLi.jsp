@@ -77,7 +77,7 @@
         </h2>
         <div id="collapseSix" class="accordion-collapse collapse " aria-labelledby="headingSix" data-bs-parent="#accordionExample">
             <div class="accordion-body" style="padding: 0px">
-                <a href="Modulos_control?m=cli&op=feed" class="nav-link list-group-item">BUSCAR CLIENTES</a>
+                <a href="Modulos_control?m=cli&op=feed" class="nav-link list-group-item">BUSCAR CLIENTES Y ENCUESTAS</a>
                 <a href="https://docs.google.com/forms/u/0/" class="nav-link list-group-item">ACCESO GOOGLE FORMS</a>
             </div>
         </div>

@@ -12,11 +12,13 @@ import java.util.Date;
  * @author camil
  */
 public class Deuda {
-   private int id;
-  private  Date fecha;
- private   int monto;
- private   String estado;
-private String cliente;
+
+    private int id;
+    private String fecha;
+    private int monto;
+    private String estado;
+    private String cliente;
+
     public Deuda() {
     }
 
@@ -28,13 +30,14 @@ private String cliente;
         this.id = id;
     }
 
-    public Date getFecha() {
+    public String getFecha() {
         return fecha;
     }
 
-    public void setFecha(Date fecha) {
+    public void setFecha(String fecha) {
         this.fecha = fecha;
     }
+
 
     public String getCliente() {
         return cliente;
@@ -43,8 +46,6 @@ private String cliente;
     public void setCliente(String cliente) {
         this.cliente = cliente;
     }
-
-   
 
     public int getMonto() {
         return monto;
@@ -61,5 +62,5 @@ private String cliente;
     public void setEstado(String estado) {
         this.estado = estado;
     }
-    
+
 }

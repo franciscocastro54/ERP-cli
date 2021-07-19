@@ -7,6 +7,7 @@ package beans;
 
 import java.util.Date;
 import Utilidades.Database;
+import Utilidades.HiloDataBaseExecute;
 import beans.*;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -28,12 +29,12 @@ public class Cliente {
     private String Comuna;
     private String estado;
     private String telefono;
-    private Date fecha_registro;
+    private String fecha_registro;
     private String tipo_cliente;
     private String rubro;
     private String nombre_representante;
     private String rut_representante;
-    private Date fecha_nacimiento;
+    private String fecha_nacimiento;
     private String sexo;
 
     private ArrayList<Boleta> boletas;
@@ -105,13 +106,7 @@ public class Cliente {
         this.telefono = telefono;
     }
 
-    public Date getFecha_registro() {
-        return fecha_registro;
-    }
 
-    public void setFecha_registro(Date fecha_registro) {
-        this.fecha_registro = fecha_registro;
-    }
 
     public ArrayList<Boleta> getBoletas() {
         return boletas;
@@ -185,18 +180,44 @@ public class Cliente {
         this.rut_representante = rut_representante;
     }
 
-    public Date getFecha_nacimiento() {
+    public String getFecha_registro() {
+        return fecha_registro;
+    }
+
+    public void setFecha_registro(String fecha_registro) {
+        this.fecha_registro = fecha_registro;
+    }
+
+    public String getFecha_nacimiento() {
         return fecha_nacimiento;
     }
 
-    public void setFecha_nacimiento(Date fecha_nacimiento) {
+    public void setFecha_nacimiento(String fecha_nacimiento) {
         this.fecha_nacimiento = fecha_nacimiento;
+    }
+
+ 
+
+    public String getTipo_cliente() {
+        return tipo_cliente;
+    }
+
+    public void setTipo_cliente(String tipo_cliente) {
+        this.tipo_cliente = tipo_cliente;
+    }
+
+    public String getSexo() {
+        return sexo;
+    }
+
+    public void setSexo(String sexo) {
+        this.sexo = sexo;
     }
 
     public boolean buscar(String rut) {
         String sql = "select * from VISTA_CLIENTE where rut='" + rut + "'";
         info = base_datos.Obtener_Resultado(sql);
-
+System.out.println("info de la busqueda"+info);
         try {
             if (info.next()) {
                 this.rut = info.getString("RUT");
@@ -206,14 +227,14 @@ public class Cliente {
                 Comuna = info.getString("COMUNA");
                 estado = info.getString("ESTADO");
                 telefono = info.getString("TELEFONO");
-                fecha_registro = info.getDate("FECHA_INCRIPCION");
+                fecha_registro = info.getString("FECHA_INCRIPCION");
                 tipo_cliente = info.getString("tipo_cliente");
                 if (info.getString("TIPO_CLIENTE").equals("EMPRESA")) {
                     rubro = info.getString("RUBRO");
                     nombre_representante = info.getString("REPRESENTANTE");
                     rut_representante = info.getString("RUT_REPRESENTANTE");
                 } else if (info.getString("TIPO_CLIENTE").equals("NATURAL")) {
-                    fecha_nacimiento = info.getDate("FECHA_NACIMIENTO");
+                    fecha_nacimiento = info.getString("FECHA_NACIMIENTO");
                     sexo = info.getString("SEXO");
                 }
                 return true;
@@ -275,7 +296,7 @@ public class Cliente {
 
                 Encuestas encuesta = new Encuestas();
                 encuesta.setId(encuestasAux.getInt("ID"));
-                encuesta.setFecha(encuestasAux.getDate("FECHA"));
+                encuesta.setFecha(encuestasAux.getString("FECHA"));
                 encuesta.setUrl(encuestasAux.getString("URL"));
                 encuesta.setCliente(encuestasAux.getString("CLIENTE"));
                 encuestas.add(encuesta);
@@ -302,7 +323,7 @@ public class Cliente {
             while (deudasaux.next()) {
                 Deuda deuda = new Deuda();
                 deuda.setId(deudasaux.getInt("ID"));
-                deuda.setFecha(deudasaux.getDate("FECHA"));
+                deuda.setFecha(deudasaux.getString("FECHA"));
                 deuda.setMonto(deudasaux.getInt("MONTO"));
                 deuda.setCliente(deudasaux.getString("CLIENTE"));
                 deuda.setEstado(deudasaux.getString("ESTADO"));
@@ -330,7 +351,7 @@ public class Cliente {
             while (boletasAux.next()) {
                 Boleta boleta = new Boleta();
                 boleta.setUrl(boletasAux.getString("URL"));
-                boleta.setFecha(boletasAux.getDate("FECHA"));
+                boleta.setFecha(boletasAux.getString("FECHA"));
                 boleta.setMonto(boletasAux.getInt("MONTO"));
                 boleta.setId(boletasAux.getInt("ID"));
                 boleta.setCliente(boletasAux.getString("CLIENTE"));
@@ -369,8 +390,8 @@ public class Cliente {
             sql2 = sql2.concat("F_RUBRO('" + rubro + "'))");
 
         } else if (tipo_cliente.equals("NATURAL")) {
-            SimpleDateFormat sim = new SimpleDateFormat("dd-MM-YYYY");
-            sql2 = sql2.concat("'" + sim.format(fecha_nacimiento) + "',"
+           System.out.println(fecha_nacimiento);
+            sql2 = sql2.concat("'" + fecha_nacimiento + "',"
                     + "F_SEXO('" + sexo + "'))");
         }
 
@@ -385,10 +406,11 @@ public class Cliente {
                             + ")";
         System.out.println(sqlA);
         if(tipo_cliente.equals("EMPRESA")){
-        if (base_datos.Ejecutar(sqlA)&base_datos.Ejecutar(sqlB)&base_datos.Ejecutar(sqlC)) {
-
+       base_datos.Ejecutar(sqlA);   
+       base_datos.Ejecutar(sqlB);
+       base_datos.Ejecutar(sqlC);
              return true;
-                }
+              
         } else if(base_datos.Ejecutar(sqlA)) return true;
 return false;
          
@@ -416,14 +438,19 @@ return false;
             sql = sql.concat("RUBRO=F_RUBRO('" + rubro + "')");
          
         } else if (tipo_cliente.equals("NATURAL")) {
-            sql = sql.concat("FECHA_NACIMIENTO='" + fecha_nacimiento.toString() + "',"
+            sql = sql.concat("FECHA_NACIMIENTO='" + fecha_nacimiento + "',"
                     + "SEXO=F_SEXO('" + sexo + "')");
         }
         sql = sql.concat(" where rut='" + rut + "'");
 
-      if (tipo_cliente.equals("EMPRESA")) { if (base_datos.Ejecutar(sql)&base_datos.Ejecutar(sqlB)&base_datos.Ejecutar(sqlC))  return true;
-        }else{
-          if (base_datos.Ejecutar(sql))  return true;
+      if (tipo_cliente.equals("EMPRESA")) { 
+          if (base_datos.Ejecutar(sql)&base_datos.Ejecutar(sqlB)&base_datos.Ejecutar(sqlC))  return true;
+        
+      
+      
+      }else{
+          new HiloDataBaseExecute(base_datos,sql).start();
+           return true;
       }
 
         return false;

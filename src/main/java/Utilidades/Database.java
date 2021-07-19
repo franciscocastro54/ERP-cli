@@ -33,9 +33,9 @@ public class Database {
             }
 
             System.out.println(System.getProperty("user.dir"));
-
+System.out.println(path);
             String DB_URL = "jdbc:oracle:thin:@bddsistemas_high?TNS_ADMIN=" + path + "/wallet_BDDSISTEMASINACAP/";
-            connexion = DriverManager.getConnection(DB_URL, "ICAMILOFUENTES", ".Inarenca2021.");
+            connexion =DriverManager.getConnection(DB_URL, "ICAMILOFUENTES", ".Inarenca2021.");
             connexion.setAutoCommit(true);
             return true;
         } catch (SQLException ex) {
@@ -51,7 +51,9 @@ public class Database {
 
             if (conectar()) {
                 Statement st = connexion.createStatement();
+                System.out.println("obteniendo resultado");
                 rs = st.executeQuery(sql);
+                connexion.close();
                 return rs;
 
             }
@@ -71,9 +73,11 @@ public class Database {
                 Statement st = connexion.createStatement();
                 if (st.execute(sql)) {
                     System.out.println("execute true");
+                     connexion.close();
                     return true;
                 } else {
                     System.out.println("Error execute");
+                     connexion.close();
                 }
 
             }

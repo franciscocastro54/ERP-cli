@@ -19,7 +19,7 @@ public class Encuestas {
     private int id;
     private String comentarios;
     private String url;
-    private Date fecha;
+    private String fecha;
     private String Cliente;
 
     public Encuestas() {
@@ -49,13 +49,14 @@ public class Encuestas {
         this.url = url;
     }
 
-    public Date getFecha() {
+    public String getFecha() {
         return fecha;
     }
 
-    public void setFecha(Date fecha) {
+    public void setFecha(String fecha) {
         this.fecha = fecha;
     }
+
 
     public String getCliente() {
         return Cliente;
@@ -69,7 +70,7 @@ public class Encuestas {
   public boolean guerdar(){
   SimpleDateFormat sim= new SimpleDateFormat("dd-MM-YYYY");
   String sql="insert into ENCUESTAS(FECHA,URL,CLIENTE) values("
-          + "'"+sim.format(fecha)+"',"
+          + "'"+fecha+"',"
           + "'"+url+"',"
           + "'"+Cliente+"'"
           + ")";

@@ -14,7 +14,7 @@ import java.util.Date;
 public class Boleta {
 
     private int id;
-    private Date fecha;
+    private String fecha;
     private int monto;
     private String estado;
     private String url;
@@ -31,13 +31,14 @@ public class Boleta {
         this.id = id;
     }
 
-    public Date getFecha() {
+    public String getFecha() {
         return fecha;
     }
 
-    public void setFecha(Date fecha) {
+    public void setFecha(String fecha) {
         this.fecha = fecha;
     }
+
 
 
     public int getMonto() {

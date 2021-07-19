@@ -1,3 +1,40 @@
+<html>
+    <head>
+         <script>
+       
+
+ const cargar_selects=async()=>{
+let peticion= await fetch('https://szgtnnarpl3vuo5-bddsistemas.adb.us-ashburn-1.oraclecloudapps.com/ords/icamilofuentes/Comunas/200')
+
+        const data= await peticion.json();
+      data.items.map(comuna=>{
+        let option= document.createElement('option')
+           option.value=comuna.nombre;
+           option.innerHTML=comuna.nombre;
+           
+            let select=document.getElementById('inputComuna');
+        select.appendChild(option)
+        })
+        
+     const peticion2= await fetch('https://szgtnnarpl3vuo5-bddsistemas.adb.us-ashburn-1.oraclecloudapps.com/ords/icamilofuentes/rubro')
+
+const   data2= await peticion2.json();
+      data2.items.map(comuna=>{
+        let option= document.createElement('option')
+           option.value=comuna.nombre;
+           option.innerHTML=comuna.nombre;
+           
+            let select=document.getElementById('inputRubro');
+        select.appendChild(option)
+        })
+        
+ }
+ cargar_selects()
+
+        </script>
+    </head>
+    <body>
+         
 <form class="container-fluid">
     <div class="row justify-content-center py-2">
         <h2 class="col-6 text-center">Modificar Empresa</h2>
@@ -40,11 +77,9 @@
             <label class="">Rubro:</label>
         </div>
         <div class="col-6">
-            <select class="form-select" aria-label="Default select example">
+            <select class="form-select" id='inputRubro' aria-label="Default select example">
                 <option selected>Rubro</option>
-                <option value="1">Alimentos</option>
-                <option value="2">Compra-venta</option>
-                <option value="3"></option>
+              
             </select>
         </div>
     </div>
@@ -77,11 +112,9 @@
             <label class="">Comuna:</label>
         </div>
         <div class="col-6">
-            <select class="form-select" aria-label="Default select example">
+            <select class="form-select" id='inputComuna' aria-label="Default select example">
                 <option selected>Comunas</option>
-                <option value="1">Santiago</option>
-                <option value="2">Quilicura</option>
-                <option value="3">Quinta normal</option>
+      
             </select>
         </div>
     </div>
@@ -97,3 +130,5 @@
         </div>
     </div>
 </form>
+    </body>
+</html>

@@ -1,49 +1,58 @@
 <%@page import="Utilidades.HiloCliente"%>
 <%@page import="beans.Cliente"%>
 <%@page import="java.util.ArrayList"%>
-<%@page import="Utilidades.Json"%>
+
 <html>
     <head>
         <%   Cliente oldCliente = null;
             String flag = "0";
+
             if (request.getParameter("Rut_usuario") != null
-                    && request.getParameter("Nombre_usuario") != null
-                    && request.getParameter("Correo_usuario") != null
-                    && request.getParameter("Confirmacion_usuario") != null
-                    && request.getParameter("Telefono_usuario") != null
-                    && request.getParameter("Comuna_usuario") != null
-                    && request.getParameter("Direccion_usuario") != null
-                    && request.getParameter("sexo_usuario") != null
-                    && request.getParameter("Fecha_nacimiento_usuario") != null) {
-                if (!request.getParameter("Rut_usuario").equals("")
-                    && !request.getParameter("Nombre_usuario").equals("")
-                    && !request.getParameter("Correo_usuario").equals("")
-                    && !request.getParameter("Confirmacion_usuario").equals("")
-                    && !request.getParameter("Telefono_usuario").equals("")
-                    && !request.getParameter("Comuna_usuario").equals("")
-                    && !request.getParameter("Direccion_usuario").equals("")
-                    && !request.getParameter("sexo_usuario").equals("")
-                    && !request.getParameter("Fecha_nacimiento_usuario").equals("")) {
-                    Cliente newCliente = new Cliente();
-                    newCliente.setTipo_cliente("NATURAL");
-                    newCliente.setRut(request.getParameter("Rut_usuario").toUpperCase());
-                    newCliente.setNombre(request.getParameter("Nombre_usuario").toUpperCase());
-                    newCliente.setMail(request.getParameter("Correo_usuario").toUpperCase());
-                    newCliente.setTelefono(request.getParameter("Telefono_usuario").toUpperCase());
-                    newCliente.setDireccion(request.getParameter("Direccion_usuario").toUpperCase());
-                    newCliente.setSexo(request.getParameter("sexo_usuario").toUpperCase());
-                    newCliente.setComuna(request.getParameter("Comuna_usuario"));
-                    newCliente.setEstado("ACTIVO");
-                    String[] fecha = request.getParameter("Fecha_nacimiento_usuario").split("-");
-                    newCliente.setFecha_nacimiento(fecha[2] + "-" + fecha[1] + "-" + fecha[0]);
+                      && request.getParameter("Nombre_usuario") != null
+                      && request.getParameter("Correo_usuario") != null
+                      && request.getParameter("Confirmacion_usuario") != null
+                      && request.getParameter("Telefono_usuario") != null
+                      && request.getParameter("Comuna_usuario") != null
+                      && request.getParameter("Direccion_usuario") != null
+                      && request.getParameter("sexo_usuario") != null
+                      && request.getParameter("Fecha_nacimiento_usuario") != null) {
 
-                    new HiloCliente(newCliente, "modificar");
-
-                } else if (!request.getParameter("Rut_usuario").equals("")) {
+             
+                if(!request.getParameter("Rut_usuario").equals("")
+                      && !request.getParameter("Nombre_usuario").equals("")
+                      && !request.getParameter("Correo_usuario").equals("")
+                      && !request.getParameter("Confirmacion_usuario").equals("")
+                      && !request.getParameter("Telefono_usuario").equals("")
+                      && !request.getParameter("Comuna_usuario").equals("")
+                      && !request.getParameter("Direccion_usuario").equals("")
+                      && !request.getParameter("sexo_usuario").equals("")
+                      && !request.getParameter("Fecha_nacimiento_usuario").equals("")){
+                Cliente newCliente = new Cliente();
+                  newCliente.setTipo_cliente("NATURAL");
+                  newCliente.setRut(request.getParameter("Rut_usuario").toUpperCase());
+                  newCliente.setNombre(request.getParameter("Nombre_usuario").toUpperCase());
+                  newCliente.setMail(request.getParameter("Correo_usuario").toUpperCase());
+                  newCliente.setTelefono(request.getParameter("Telefono_usuario").toUpperCase());
+                  newCliente.setDireccion(request.getParameter("Direccion_usuario").toUpperCase());
+                  newCliente.setSexo(request.getParameter("sexo_usuario").toUpperCase());
+                  newCliente.setComuna(request.getParameter("Comuna_usuario"));
+                  newCliente.setEstado("ACTIVO");
+                  String[] fecha = request.getParameter("Fecha_nacimiento_usuario").split("-");
+                  newCliente.setFecha_nacimiento(fecha[2] + "-" + fecha[1] + "-" + fecha[0]);
+            
+                  new HiloCliente(newCliente, "modificar").start();
+                }else if (!request.getParameter("Rut_usuario").equals("")) {
                     oldCliente = new Cliente();
+
                     oldCliente.buscar(request.getParameter("Rut_usuario"));
 
-                }
+                    if (oldCliente.getNombre() == null) {
+                        oldCliente = null;
+                    }
+                    
+                    
+                 }
+
             }
         %>
         <script>
@@ -60,7 +69,7 @@
                         let select = document.getElementById('inputComuna');
                         select.appendChild(option)
                     })
-            <%if (oldCliente != null) {
+            <%if (oldCliente != null) 
         out.print("document.getElementById('inputComuna').value='" + oldCliente.getComuna() + "';");%>
                     const peticion2 = await fetch('https://szgtnnarpl3vuo5-bddsistemas.adb.us-ashburn-1.oraclecloudapps.com/ords/icamilofuentes/sexo')
                     const   data2 = await peticion2.json();
@@ -72,8 +81,7 @@
                         let select = document.getElementById('inputSexo');
                         select.appendChild(option)
                     })
-            <%if (oldCliente != null) {
-        out.print("document.getElementById('inputSexo').value='" + oldCliente.getSexo() + "';");%>
+            <%if (oldCliente != null) out.print("document.getElementById('inputSexo').value='" + oldCliente.getSexo() + "';");%>
                 } catch (error) {
                     (error) => {
                         console.log('reintentando...')
@@ -92,7 +100,51 @@
 
         <form class="container-fluid" style="padding: 0px" action="Modulos_control?m=cli&op=modcli" method="post" >
 
-
+            <%
+                /*
+              if (request.getParameter("Rut_usuario") != null
+                                    && request.getParameter("Nombre_usuario") != null
+                                    && request.getParameter("Correo_usuario") != null
+                                    && request.getParameter("Confirmar_usuario") != null
+                                    && request.getParameter("Telefono_usuario") != null
+                                    && request.getParameter("Comuna_usuario") != null
+                                    && request.getParameter("Direccion_usuario") != null
+                                    && request.getParameter("sexo_usuario") != null
+                                    && request.getParameter("Fecha_nacimiento_usuario") != null) {
+                
+                            out.println("todos nulos");
+                            }
+              if(request.getParameter("Rut_usuario")== null){ out.println("rut null");}
+              else if(request.getParameter("Rut_usuario").equals(""))out.println("rut vacio");
+              else if(!request.getParameter("Rut_usuario").equals("") && !request.getParameter("Nombre_usuario").equals(""))
+                  out.println(request.getParameter("Rut_usuario")+request.getParameter("Nombre_usuario"));
+              else if(!request.getParameter("Rut_usuario").equals(""))out.println(request.getParameter("Rut_usuario"));
+                 */
+             /*
+                             if (request.getParameter("Rut_usuario").equals("")
+                                    && request.getParameter("Nombre_usuario").equals("")
+                                    && request.getParameter("Correo_usuario").equals("")
+                                    && request.getParameter("Confirmar_usuario").equals("")
+                                    && request.getParameter("Telefono_usuario").equals("")
+                                    && request.getParameter("Comuna_usuario").equals("")
+                                    && request.getParameter("Direccion_usuario").equals("")
+                                    && request.getParameter("sexo_usuario").equals("")
+                                    && request.getParameter("Fecha_nacimiento_usuario").equals("")) {
+                 
+                                 out.println("todos vacios");
+                             }
+                             if((request.getParameter("Rut_usuario").equals(""))){
+                 
+                             out.println("rut vacio");
+                 
+                             }
+                               if((!request.getParameter("Rut_usuario").equals(""))){
+                 
+                             out.println("rut con datos");
+                 
+                             }
+                 */
+            %>
             <div class="row justify-content-center py-2">
 
 

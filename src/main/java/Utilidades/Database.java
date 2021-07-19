@@ -21,8 +21,16 @@ import java.util.logging.Logger;
  */
 public class Database {
 
-    Connection connexion;
+   private Connection connexion;
     public static String path;
+
+    public Connection getConnexion() {
+        return connexion;
+    }
+
+    public void setConnexion(Connection connexion) {
+        this.connexion = connexion;
+    }
 
     public boolean conectar() {
         try {
@@ -40,7 +48,7 @@ System.out.println(path);
             return true;
         } catch (SQLException ex) {
             Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, ex);
-            return false;
+            return conectar();
         }
     }
 
@@ -50,16 +58,16 @@ System.out.println(path);
         try {
 
             if (conectar()) {
-                Statement st = connexion.createStatement();
+                Statement st = connexion.createStatement();    
                 System.out.println("obteniendo resultado");
                 rs = st.executeQuery(sql);
-                connexion.close();
+                
                 return rs;
 
             }
         } catch (SQLException ex) {
             Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, ex);
-
+return Obtener_Resultado(sql);
         }
 
         return rs;
@@ -68,7 +76,6 @@ System.out.println(path);
 
     public boolean Ejecutar(String sql) {
         try {
-
             if (conectar()) {
                 Statement st = connexion.createStatement();
                 if (st.execute(sql)) {
@@ -84,7 +91,7 @@ System.out.println(path);
         } catch (SQLException ex) {
             Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, ex);
             System.out.println(ex.getLocalizedMessage());
-            return false;
+          
         }
 
         return false;

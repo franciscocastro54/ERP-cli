@@ -8,7 +8,6 @@ beans\Cliente.class
 beans\Deuda.class
 beans\Usuario.class
 com\mycompany\clientes\JAXRSConfiguration.class
-Utilidades\Json.class
 Utilidades\HiloDataBaseExecute.class
 Utilidades\Database.class
 Utilidades\HiloCliente.class

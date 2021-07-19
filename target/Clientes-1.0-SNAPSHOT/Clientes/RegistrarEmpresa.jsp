@@ -1,7 +1,7 @@
 <%@page import="Utilidades.HiloCliente"%>
 <%@page import="beans.Cliente"%>
 <%@page import="java.util.ArrayList"%>
-<%@page import="Utilidades.Json"%>
+
 <html>
     <head>
          <script>

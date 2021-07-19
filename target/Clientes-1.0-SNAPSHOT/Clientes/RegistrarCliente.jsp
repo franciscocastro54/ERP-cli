@@ -1,7 +1,6 @@
 <%@page import="Utilidades.HiloCliente"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.net.URL"%>
-<%@page import="Utilidades.Json"%>
 <%@page import="beans.Cliente"%>
 <html>
     <head>

@@ -237,8 +237,10 @@ System.out.println("info de la busqueda"+info);
                     fecha_nacimiento = info.getString("FECHA_NACIMIENTO");
                     sexo = info.getString("SEXO");
                 }
+                base_datos.getConnexion().close();
                 return true;
             } else {
+                 base_datos.getConnexion().close();
                 return false;
             }
         } catch (SQLException ex) {
@@ -449,7 +451,7 @@ return false;
       
       
       }else{
-          new HiloDataBaseExecute(base_datos,sql).start();
+        base_datos.Ejecutar(sql);
            return true;
       }
 

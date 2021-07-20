@@ -64,9 +64,9 @@
                         <thead>
                             <tr class="table-active">
                                 <th scope="col-1">#</th>
-                                <th scope="col-3">ID Encuesta</th>
+                                <th scope="col-2">ID Encuesta</th>
                                 <th scope="col-5">URL</th>
-                                <th scope="col-2">Fecha</th>
+                                <th scope="col-3">Fecha</th>
                                 <th scope="col-1">Nº Destinatarios</th>
                             </tr>
                         </thead>

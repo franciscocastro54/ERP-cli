@@ -8,8 +8,20 @@
 
             <form class="row justify-content-center  align-items-center py-1" action="Modulos_control?m=cli&op=His" method="post" >
                 <label class="col-1"><strong>Rut:</strong></label>
-                <input type="text" class="col-4 "/>
+                <input name="inputRut" id="inputRut" type="text" class="col-4 "/>
                 <input type="submit" class="col-1 btn btn-primary" value="Buscar" >
+                <%
+                    Cliente cliente = null;
+                    if (request.getParameter("inputRut") != null && !(request.getParameter("inputRut").equals(""))) {
+                        cliente = new Cliente();
+                        cliente.buscar(request.getParameter("inputRut"));
+                        out.println("<script>"
+                                + "\nconst inputRut=document.getElementById('inputRut');"
+                                + "\ninputRut.value='" + cliente.getRut() + "'</script>");
+
+                    }
+
+                %>
             </form>
             <div class="row py-1">
                 <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -29,31 +41,83 @@
                 <div class="tab-content" id="myTabContent">
                     <div class="tab-pane fade show active" id="Informacion" role="tabpanel" aria-labelledby="Informacion-tab">
                         <table class=" table table-striped">
-                            <tr><td><strong>Nombre Completo:</strong></p></td><td>Example</td></tr>
-                            <tr><td><strong>Rut:</strong></td><td>12345678-9</td></tr>
-                            <tr><td><strong>Correo electronico:</strong></td><td>example@example.com</td></tr>
-                            <tr><td><strong>Teléfono:</strong></td><td>+56912345678</td></tr>
-                            <tr><td><strong>Comuna:</strong></td><td>Santiago</td></tr>
-                            <tr><td><strong>Dirección:</strong></td><td>example 123</td></tr>
-                            <tr><td><strong>Fecha de nacimiento:</strong></td><td>22-03-2000</td></tr>
-                            <tr><td><strong>Sexo:</strong></td><td>Masculino</td></tr>
+                            <tbody>
+                                <%                                    if (cliente != null) {
+                                        if (cliente.getTipo_cliente().equals("NATURAL")) {
+                                            String[] fecha1 = cliente.getFecha_nacimiento().split(" ");
+                                            String[] fecha2 = cliente.getFecha_registro().split(" ");
+                                            out.println("<tr><td><strong>Nombre:</strong></td><td>" + cliente.getNombre() + "</td></tr>");
+                                            out.println("<tr><td><strong>Rut:</strong></td><td>" + cliente.getRut() + "</td></tr>");
+                                            out.println("<tr><td><strong>Correo:</strong></td><td>" + cliente.getMail() + "</td></tr>");
+                                            out.println("<tr><td><strong>Teléfono:</strong></td><td>" + cliente.getTelefono() + "</td></tr>");
+                                            out.println("<tr><td><strong>Comuna:</strong></td><td>" + cliente.getComuna() + "</td></tr>");
+                                            out.println("<tr><td><strong>Dirección</strong></td><td>" + cliente.getDireccion() + "</td></tr>");
+                                            out.println("<tr><td><strong>Fecha de nacimiento:</strong></td><td>" + fecha1[0] + "</td></tr>");
+                                            out.println("<tr><td><strong>Fecha de registro:</strong></td><td>" + fecha2[0] + "</td></tr>");
+                                            out.println("<tr><td><strong>Sexo:</strong></td><td>" + cliente.getSexo() + "</td></tr>");
+
+                                        } else if (cliente.getTipo_cliente().equals("EMPRESA")) {
+                                            String[] fecha2 = cliente.getFecha_registro().split(" ");
+                                            out.println("<tr><td><strong>Nombre:</strong></td><td>" + cliente.getNombre() + "</td></tr>");
+                                            out.println("<tr><td><strong>Rut:</strong></td><td>" + cliente.getRut() + "</td></tr>");
+                                            out.println("<tr><td><strong>Nombre Representante:</strong></td><td>" + cliente.getNombre_representante() + "</td></tr>");
+                                            out.println("<tr><td><strong>Rut Representante:</strong></td><td>" + cliente.getRut_representante() + "</td></tr>");
+                                            out.println("<tr><td><strong>Rubro:</strong></td><td>" + cliente.getRubro() + "</td></tr>");
+                                            out.println("<tr><td><strong>Correo:</strong></td><td>" + cliente.getMail() + "</td></tr>");
+                                            out.println("<tr><td><strong>Teléfono:</strong></td><td>" + cliente.getTelefono() + "</td></tr>");
+                                            out.println("<tr><td><strong>Comuna:</strong></td><td>" + cliente.getComuna() + "</td></tr>");
+                                            out.println("<tr><td><strong>Dirección:</strong></td><td>" + cliente.getDireccion() + "</td></tr>");
+                                            out.println("<tr><td><strong>Fecha de registro:</strong></td><td>" + fecha2[0] + "</td></tr>");
+
+                                        }
+
+                                    }
+
+
+                                %>
+                            </tbody>
                         </table>
                     </div>
                     <div class="tab-pane fade" id="ventas" role="tabpanel" aria-labelledby="ventas-tab">
                         <table class=" table table-striped">
-                            <thead>   <tr><th>ID</th><th>Fecha</th><th>Monto</th><th>Estado</th></tr></thead>
+                            <thead>   <tr><th>ID</th><th>Fecha</th><th>Monto</th></tr></thead>
                             <tbody>
-                            <tr><td>1234567</td><td>2/06/2020</td><td>100000</td><td>Pagado</td></tr>
-                            <tr><td>1234657</td><td>22/07/2020</td><td>120000</td><td>Pagado</td></tr>
-                            <tr><td>6320156</td><td>20/01/2021</td><td>200000</td><td>En deuda</td></tr>
+                                <%                                    if (cliente != null) {
+                                        cliente.buscar_Boletas(-1);
+
+                                        for (int i = 0; i < cliente.getBoletas().size(); i++) {
+                                            String[] fecha = cliente.getBoletas().get(i).getFecha().split(" ");
+                                            out.println("<tr><td>" + cliente.getBoletas().get(i).getId() + "</td>"
+                                                    + "<td>" + fecha[0] + "</td>"
+                                                    + "<td>" + cliente.getBoletas().get(i).getMonto() + "</td>");
+                                        }
+
+                                    }
+
+
+                                %>
                             </tbody>
                         </table>
                     </div>
                     <div class="tab-pane fade" id="servicio" role="tabpanel" aria-labelledby="servicio-tab">
                         <table class=" table table-striped">
-                            <thead><tr><th>ID</th><th>Fecha</th><th>estado</th></tr></thead>
+                            <thead><tr><th>ID</th><th>Fecha</th><th>Tipo</th><th>estado</th></tr></thead>
                             <tbody>
-                                <tr><td>12345678</td><td>20/03/2021</td><td>Anulada</td></tr>
+                                <%     if (cliente != null) {
+                                        cliente.buscar_orden_servicio(-1);
+
+                                        for (int i = 0; i < cliente.getOrden_de_servicio().size(); i++) {
+                                            String[] fecha = cliente.getOrden_de_servicio().get(i).getFecha().toString().split(" ");
+                                            out.println("<tr><td>" + cliente.getOrden_de_servicio().get(i).getIdOrden() + "</td>"
+                                                    + "<td>" + fecha[0] + "</td>"
+                                                    + "<td>" + cliente.getOrden_de_servicio().get(i).getTipo()+ "</td>"
+                                                    + "<td>" + cliente.getOrden_de_servicio().get(i).getEstado() + "</td>");
+                                        }
+
+                                    }
+
+
+                                %>
                             </tbody>
                         </table>
 
@@ -64,7 +128,7 @@
                         <table class=" table table-striped">
                             <thead><tr><th>ID</th><th>Fecha</th></tr></thead>
                             <tbody>
-                            <tr><td>12345678</td><td>22/03/2021</td></tr>
+                                <tr><td>12345678</td><td>22/03/2021</td></tr>
                             </tbody>
                         </table>
                     </div>

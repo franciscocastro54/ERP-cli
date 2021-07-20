@@ -26,11 +26,11 @@
 </select>
      
 <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
-  <option selected>Estado de boleta:</option>
+  <option selected>Estado de deuda:</option>
   <option value="1">Pagada</option>
   <option value="2">Pendiente</option>
   <option value="3">Vencida</option>
-  <option value="3">Morosa</option>
+  <option value="4">Morosa</option>
 </select>
        
        <br><br>

@@ -36,7 +36,7 @@
     </head>
     <body>
         <br>
-        <h3 style="text-align: center ">Encuesta de satisfacción</h3>
+        <h3 style="text-align: center ">Encuesta de satisfaccion</h3>
         <div class="container">
             <div class="row">
                 <div class="col-xs-12">
@@ -63,11 +63,11 @@
                     <table class="table table-hover table-striped table-sm">
                         <thead>
                             <tr class="table-active">
-                                <th scope="col">#</th>
-                                <th scope="col">ID Encuesta</th>
-                                <th scope="col">URL</th>
-                                <th scope="col">Fecha</th>
-                                <th scope="col">Nº Destinatarios</th>
+                                <th scope="col-1">#</th>
+                                <th scope="col-3">ID Encuesta</th>
+                                <th scope="col-5">URL</th>
+                                <th scope="col-2">Fecha</th>
+                                <th scope="col-1">Nº Destinatarios</th>
                             </tr>
                         </thead>
                         <tbody>

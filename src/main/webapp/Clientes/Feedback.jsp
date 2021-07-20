@@ -20,11 +20,11 @@
        <div class="row">
     <div class="col-10">
       <label class="sr-only" for="inlineFormInput">URL encuesta</label>
-      <input type="text" class="form-control mb-2" id="inlineFormInput" placeholder="https://docs.google.com/forms/d/e/1FAIpQLSdnXWERsV01176JleG0-T_vJJKZIiaMCj_RBg6ApYHHX5cTwg/viewform?usp=sf_link">
+      <input type="text"  name="inputfeedbackurl" id="1" class="form-control mb-2"  placeholder="https://docs.google.com/forms/d/e/1FAIpQLSdnXWERsV01176JleG0-T_vJJKZIiaMCj_RBg6ApYHHX5cTwg/viewform?usp=sf_link">
     </div>
     <div class="col-2">
         <br>
-      <button type="submit" class="btn btn-primary mb-2">Enviar</button>
+      <button type="submit" name="inputfeedbackenviar" id="2" class="btn btn-primary mb-2">Enviar</button>
     </div>
   </div>
   </div>
@@ -48,57 +48,9 @@
       <td>20576454-4</td>
       <td>00000001</td>
       <td>https://docs.google.com/forms/d/e/1FAIpQLSdnXWERsV01176JleG0-T_vJJKZIiaMCj_RBg6ApYHHX5cTwg/viewform?usp=sf_link</td>
-            <td><input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked></td>
+            <td><input class="form-check-input" type="checkbox" name="inputfeedbackcheck" id="3" value=""  checked></td>
     </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>15675465-9</td>
-      <td>00000002</td>
-      <td>https://docs.google.com/forms/d/e/1FAIpQLSdnXWERsV01176JleG0-T_vJJKZIiaMCj_RBg6ApYHHX5cTwg/viewform?usp=sf_link</td>
-            <td><input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked></td>
-    </tr>
-    <tr>
-    <th scope="row">3</th>
-      <td>12798098-7</td>
-      <td>Placeholder</td>
-      <td>Placeholder</td>
-            <td><input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked></td>
-    </tr>
-    <tr>
-      <th scope="row">4</th>
-      <td>Placeholder</td>
-      <td>Placeholder</td>
-      <td>Placeholder</td>
-            <td><input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked></td>
-    </tr>
-    <tr>
-      <th scope="row">5</th>
-      <td>Placeholder</td>
-      <td>Placeholder</td>
-      <td>Placeholder</td>
-            <td><input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked></td>
-    </tr>
-    <tr>
-      <th scope="row">6</th>
-      <td>Placeholder</td>
-      <td>Placeholder</td>
-      <td>Placeholder</td>
-            <td><input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked></td>
-    </tr> 
-    <tr>
-      <th scope="row">7</th>
-      <td>Placeholder</td>
-      <td>Placeholder</td>
-      <td>Placeholder</td>
-             <td><input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked></td>
-    </tr> 
-    <tr>
-      <th scope="row">8</th>
-      <td>Placeholder</td>
-      <td>Placeholder</td>
-      <td>Placeholder</td>
-            <td><input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked></td>
-    </tr>
+    
   </tbody>
 </table>
      

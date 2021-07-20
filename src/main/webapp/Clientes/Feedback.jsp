@@ -32,7 +32,7 @@
  
        
        
-   <table class="table table-hover table-sm">
+   <table class="table table-hover table-striped table-sm">
   <thead>
     <tr class="table-active">
       <th scope="col">#</th>

@@ -128,7 +128,7 @@
                         <table class=" table table-striped">
                             <thead><tr><th>ID</th><th>Fecha</th></tr></thead>
                             <tbody>
-                                <tr><td>12345678</td><td>22/03/2021</td></tr>
+                            
                             </tbody>
                         </table>
                     </div>

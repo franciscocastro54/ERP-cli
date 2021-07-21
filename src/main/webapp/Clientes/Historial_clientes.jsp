@@ -34,9 +34,6 @@
                     <li class="nav-item" role="presentation">
                         <button class="nav-link" id="servicio-tab" data-bs-toggle="tab" data-bs-target="#servicio" type="button" role="tab" aria-controls="servicio" aria-selected="false">Orden de servicio</button>
                     </li>
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="Encuestas-tab" data-bs-toggle="tab" data-bs-target="#Encuestas" type="button" role="tab" aria-controls="Encuestas" aria-selected="false">Encuestas</button>
-                    </li>
                 </ul>
                 <div class="tab-content" id="myTabContent">
                     <div class="tab-pane fade show active" id="Informacion" role="tabpanel" aria-labelledby="Informacion-tab">

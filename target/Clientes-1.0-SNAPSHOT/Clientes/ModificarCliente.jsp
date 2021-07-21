@@ -92,7 +92,13 @@
                 }
 
             }
-            cargar_selects()
+    try{
+ cargar_selects()
+ }catch (error){
+   console.log('reintentando...')  
+    cargar_selects()
+     
+ }
 
         </script>
     </head>

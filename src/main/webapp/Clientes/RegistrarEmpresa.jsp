@@ -33,8 +33,13 @@ const   data2= await peticion2.json();
         })
         
  }
+ try{
  cargar_selects()
-
+ }catch (error){
+   console.log('reintentando...')  
+    cargar_selects()
+     
+ }
         </script>
         
     </head>

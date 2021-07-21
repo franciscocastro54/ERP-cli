@@ -10,7 +10,6 @@
 
  const cargar_selects=async()=>{
 let peticion= await fetch('https://szgtnnarpl3vuo5-bddsistemas.adb.us-ashburn-1.oraclecloudapps.com/ords/icamilofuentes/Comunas/200')
-
         const data= await peticion.json();
       data.items.map(comuna=>{
         let option= document.createElement('option')
@@ -32,9 +31,13 @@ const   data2= await peticion2.json();
         select.appendChild(option)
         })
  }
- 
+ try{
  cargar_selects()
-
+ }catch (error){
+   console.log('reintentando...')  
+    cargar_selects()
+     
+ }
         </script>
 
     </head>

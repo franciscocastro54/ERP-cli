@@ -16,7 +16,7 @@
 
                     cliente = new Cliente();
                     cliente.buscar(request.getParameter("inputRut"));
-
+                    cliente.setRut(request.getParameter("inputRut"));
                     cliente.buscar_Deudas(-1);
 
                 }

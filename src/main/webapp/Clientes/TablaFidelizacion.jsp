@@ -40,7 +40,7 @@
                                         int cont = 0;
                                         while (rs.next()) {
                                             cont++;
-                                            String actividad = (rs.getString("ultima_actividad") != null) ? rs.getString("ultima_actividad") : "no ahi actividad";
+                                            String actividad = (rs.getString("ultima_actividad") != null) ? rs.getString("ultima_actividad") : "no hay actividad";
                                             out.println("<tr>"
                                                     + "<th scope='row'>" + cont + "<label class='form-check-label' for='flexCheckChecked'></label></th>"
                                                     + "<td>" + rs.getString("RUT") + "</td>"

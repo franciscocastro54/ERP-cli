@@ -1,9 +1,11 @@
 com\mycompany\clientes\resources\JavaEE8Resource.class
 beans\Encuestas.class
+Utilidades\HiloOrden.class
 Autentificacion_class\Autentificacion_class.class
 Autentificacion.class
 beans\Boleta.class
 Modulos_control.class
+Utilidades\HiloOrdenServicio.class
 beans\Cliente.class
 beans\Deuda.class
 beans\Usuario.class
@@ -12,3 +14,4 @@ Utilidades\HiloDataBaseExecute.class
 Utilidades\Database.class
 Utilidades\HiloCliente.class
 beans\Orden_de_servicio.class
+Utilidades\HiloSQL.class

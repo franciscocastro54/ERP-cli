@@ -13,7 +13,7 @@
             <a href="Modulos_control?m=inv" type="button" class="btn btn-primary align-middle"><strong><br>Inventario</strong></a>
             <a href="Modulos_control?m=fin" type="button" class="btn btn-primary align-middle"><strong><br>Finanzas</strong></a>
             <a href="Modulos_control?m=adm" type="button" class="btn btn-primary align-middle"><strong><br>Administración</strong></a>
-            <a href="" type="button" class="btn btn-primary align-middle"><strong><br>CERRAR SESION</strong></a>
+            <a href="index.jsp" type="button" class="btn btn-primary align-middle"><strong><br>CERRAR SESION</strong></a>
         </div>
     </div>
 </healer>
